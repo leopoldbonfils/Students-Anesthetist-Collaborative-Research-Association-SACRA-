@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { PageHeader } from '../../components/common/PageHeader';
 import { SectionTitle } from '../../components/common/SectionTitle';
 import { Card } from '../../components/ui/Card';
 import { Badge } from '../../components/ui/Badge';
 import { Loader } from '../../components/ui/Loader';
 import { dataService } from '../../services/dataService';
-import { Search, Download, FileText, Ban } from 'lucide-react';
+import { Search, Download, FileText, Ban, Monitor, Shield, Globe, ArrowRight } from 'lucide-react';
 import './Research.css';
 
 export const Research = () => {
@@ -53,13 +52,76 @@ export const Research = () => {
 
   return (
     <div className="research-page animate-fade-in">
-      <PageHeader
-        title="Research Collaborative"
-        description="Explore our active clinical audits, multicenter observational trials, and student-coauthored bibliography."
-      />
+      {/* Light blue/gray Research Hero Section (Aligned with 4th Screenshot) */}
+      <section className="research-hero-section">
+        <div className="container research-hero-container">
+          <div className="research-hero-left">
+            <span className="research-hero-badge">Global Research Hub</span>
+            <h1 className="research-hero-title">
+              Advancing Anesthesia Through Student-Led Research
+            </h1>
+            <p className="research-hero-subtitle">
+              SACRA empowers the next generation of clinical investigators to tackle the most pressing challenges in global anesthesia through evidence-based collaborative studies and mentorship.
+            </p>
+            <div className="research-hero-actions">
+              <a href="#active-studies" className="btn btn-primary-solid-arrow">
+                Explore Active Projects <ArrowRight size={16} />
+              </a>
+              <a href="/about" className="btn btn-secondary-flat">
+                Read Our Mission
+              </a>
+            </div>
+          </div>
+          
+          <div className="research-hero-right">
+            {/* Styled vector representation of the Pi symbol in the screenshot */}
+            <svg width="220" height="220" viewBox="0 0 100 100" fill="none" stroke="#12263f" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" className="pi-vector-symbol">
+              <path d="M20 25 L80 25" />
+              <path d="M38 25 L38 75 C38 80, 30 80, 24 75" />
+              <path d="M62 25 L62 70 C62 75, 68 80, 76 75" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Research Focus Areas (Aligned with 4th Screenshot) */}
+      <section className="focus-areas-section">
+        <div className="container">
+          <div className="focus-section-header">
+            <h2>Core Research Focus Areas</h2>
+            <p>Our collaborative efforts are strategically channeled into three pillars that define the future of anesthesia safety and efficacy.</p>
+          </div>
+
+          <div className="focus-areas-grid">
+            <Card className="focus-area-card" hoverEffect={true}>
+              <div className="focus-icon-box blue-tint">
+                <Monitor size={28} className="focus-icon-blue" />
+              </div>
+              <h3>Airway Management</h3>
+              <p>Studying ventilation safety guidelines, video laryngoscopy access, and checklists for difficult airway inductions.</p>
+            </Card>
+
+            <Card className="focus-area-card" hoverEffect={true}>
+              <div className="focus-icon-box green-tint">
+                <Shield size={28} className="focus-icon-green" />
+              </div>
+              <h3>Patient Safety</h3>
+              <p>Auditing the implementation of WHO surgical safety protocols, drug labeling compliance, and post-op outcomes.</p>
+            </Card>
+
+            <Card className="focus-area-card" hoverEffect={true}>
+              <div className="focus-icon-box blue-tint">
+                <Globe size={28} className="focus-icon-blue" />
+              </div>
+              <h3>Public Health</h3>
+              <p>Investigating anesthesia accessibility, maternal surgical outcomes, and workforce capacities in developing nations.</p>
+            </Card>
+          </div>
+        </div>
+      </section>
 
       {/* Active Trials Section */}
-      <section className="container section-padding">
+      <section id="active-studies" className="container section-padding">
         <SectionTitle
           title="Active Trials & Observational Studies"
           subtitle="Our student networks coordinate clinical audits across multiple institutions under senior advisory boards."

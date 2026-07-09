@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { PageHeader } from '../../components/common/PageHeader';
 import { SectionTitle } from '../../components/common/SectionTitle';
 import { Card } from '../../components/ui/Card';
 import { Badge } from '../../components/ui/Badge';
@@ -7,7 +6,8 @@ import { Button } from '../../components/ui/Button';
 import { Modal } from '../../components/ui/Modal';
 import { Loader } from '../../components/ui/Loader';
 import { dataService } from '../../services/dataService';
-import { Calendar, Clock, MapPin, User, CheckCircle2 } from 'lucide-react';
+import { Clock, MapPin, CheckCircle2 } from 'lucide-react';
+import simLabImg from '../../assets/images/sim-lab.png';
 import './Events.css';
 
 export const Events = () => {
@@ -56,7 +56,6 @@ export const Events = () => {
   if (isLoading) {
     return (
       <div className="events-page">
-        <PageHeader title="SACRA Events" description="Upcoming symposiums and crisis simulation workshops." />
         <Loader type="spinner" />
       </div>
     );
@@ -68,48 +67,57 @@ export const Events = () => {
 
   return (
     <div className="events-page animate-fade-in">
-      <PageHeader
-        title="Symposiums & Workshops"
-        description="Join our hands-on clinical simulation labs, live research methodology panels, and annual symposiums."
-      />
+      {/* Light blue/gray Event Hero Section (Aligned with 3rd Screenshot) */}
+      <section className="events-hero-section">
+        <div className="container events-hero-container">
+          <span className="events-hero-badge">Learning & Development</span>
+          <h1 className="events-hero-title">Upcoming Events & Clinical Workshops</h1>
+          <p className="events-hero-subtitle">
+            Advancing the field of anesthesia through collaborative research, hands-on training, and global academic exchange. Join our community of student anesthetists.
+          </p>
+        </div>
+      </section>
 
       {/* Featured Event Card */}
       {featuredEvent && (
         <section className="container section-padding">
-          <SectionTitle title="Featured Event" subtitle="Registration is open for our flagship annual symposium." />
+          <div className="featured-section-header">
+            <h2 className="featured-section-title">★ Featured Event</h2>
+          </div>
           <Card className="featured-event-card" hoverEffect={false}>
+            <div className="featured-event-visual">
+              {/* Render simulation image representing lecture/workshop halls */}
+              <img src={simLabImg} alt="SACRA Symposium hall" className="symposium-image" />
+            </div>
+            
             <div className="featured-event-content">
-              <Badge text="Featured symposium" type="primary" className="featured-badge" />
-              <h2 className="featured-event-title">{featuredEvent.title}</h2>
-              <p className="featured-event-desc">{featuredEvent.description}</p>
-              
-              <div className="featured-event-meta-grid">
-                <div className="meta-item">
-                  <Calendar size={18} className="meta-icon" />
-                  <span>{featuredEvent.date}</span>
+              <div className="featured-event-header-row">
+                <div className="event-date-box">
+                  <span className="date-number">15</span>
+                  <span className="date-month-short">OCT</span>
                 </div>
-                <div className="meta-item">
-                  <Clock size={18} className="meta-icon" />
-                  <span>{featuredEvent.time}</span>
-                </div>
-                <div className="meta-item">
-                  <MapPin size={18} className="meta-icon" />
-                  <span>{featuredEvent.location}</span>
-                </div>
-                <div className="meta-item">
-                  <User size={18} className="meta-icon" />
-                  <span>{featuredEvent.speaker}</span>
+                <div className="event-location-row">
+                  <MapPin size={16} className="loc-icon" />
+                  <span>Royal College of Physicians, London</span>
                 </div>
               </div>
 
+              <h3 className="featured-event-title">
+                SACRA Annual Global Anesthesia Research Symposium 2024
+              </h3>
+              
+              <p className="featured-event-desc">
+                A two-day flagship conference focusing on innovative pain management strategies and pediatric anesthesia research. Featuring keynote speakers from leading university hospitals.
+              </p>
+
               <div className="featured-event-actions">
-                <Button onClick={() => handleOpenRsvp(featuredEvent)} variant="secondary">
-                  RSVP & Register
+                <Button onClick={() => handleOpenRsvp(featuredEvent)} variant="primary">
+                  Register Now
+                </Button>
+                <Button to="/about" variant="outline">
+                  Learn More
                 </Button>
               </div>
-            </div>
-            <div className="featured-event-visual">
-              <Calendar size={80} className="calendar-bg-icon" />
             </div>
           </Card>
         </section>

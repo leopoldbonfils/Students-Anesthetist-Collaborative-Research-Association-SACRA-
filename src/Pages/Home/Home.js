@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, ArrowRight, Activity, GraduationCap, Users, Heart, Award } from 'lucide-react';
+import { ShieldCheck, ArrowRight, FlaskConical, GraduationCap, Users, Heart, Building2 } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { Card } from '../../components/ui/Card';
+import simLabImg from '../../assets/images/sim-lab.png';
 import './Home.css';
 
 export const Home = () => {
@@ -30,19 +31,8 @@ export const Home = () => {
 
           <div className="hero-visual">
             <div className="main-visual-frame">
-              <div className="sim-lab-image">
-                <div className="sim-monitor">
-                  <div className="monitor-line pulse"></div>
-                  <div className="monitor-line blue pulse"></div>
-                  <div className="monitor-metrics">
-                    <span>HR: 72</span>
-                    <span>SpO2: 99%</span>
-                  </div>
-                </div>
-                <div className="sim-bed">
-                  <div className="sim-device"></div>
-                </div>
-              </div>
+              {/* Render the actual lab image to match home page screenshot */}
+              <img src={simLabImg} alt="SACRA Clinical simulation lab" className="sim-lab-image" />
             </div>
             {/* Absolute Floating Metric Cards */}
             <Card className="floating-metric-card top-right" hoverEffect={true}>
@@ -57,7 +47,7 @@ export const Home = () => {
 
             <Card className="floating-metric-card bottom-left" hoverEffect={true}>
               <div className="metric-icon blue-bg">
-                <Activity size={18} />
+                <FlaskConical size={18} />
               </div>
               <div className="metric-info">
                 <h5>Research Projects</h5>
@@ -74,11 +64,11 @@ export const Home = () => {
           {/* Research Pillar (Featured Active Card) */}
           <Card className="pillar-card featured-pillar" hoverEffect={true}>
             <div className="pillar-icon-wrapper">
-              <Activity size={32} />
+              <FlaskConical size={32} />
             </div>
             <h3 className="pillar-title">Research</h3>
             <p className="pillar-description">
-              Leading evidence-based studies in anesthesia safety, patient monitoring protocols, and clinical outcomes.
+              Leading evidence-based studies in anesthesia safety.
             </p>
             <Link to="/research" className="pillar-link">
               Learn More <ArrowRight size={16} />
@@ -92,7 +82,7 @@ export const Home = () => {
             </div>
             <h3 className="pillar-title">Education</h3>
             <p className="pillar-description">
-              Continuous learning through peer-reviewed workshops, online seminars, and simulation training.
+              Continuous learning through peer-reviewed workshops.
             </p>
             <Link to="/programs" className="pillar-link">
               Learn More <ArrowRight size={16} />
@@ -106,7 +96,7 @@ export const Home = () => {
             </div>
             <h3 className="pillar-title">Outreach</h3>
             <p className="pillar-description">
-              Health campaigns across rural and urban communities, advocating for surgical safety standards.
+              Health campaigns across rural and urban communities.
             </p>
             <Link to="/events" className="pillar-link">
               Learn More <ArrowRight size={16} />
@@ -116,11 +106,11 @@ export const Home = () => {
           {/* Leadership Pillar */}
           <Card className="pillar-card" hoverEffect={true}>
             <div className="pillar-icon-wrapper blue-icon">
-              <Award size={28} />
+              <Building2 size={28} />
             </div>
             <h3 className="pillar-title">Leadership</h3>
             <p className="pillar-description">
-              Empowering the next generation of clinical leaders, board mentors, and research principal investigators.
+              Empowering the next generation of clinical leaders.
             </p>
             <Link to="/about" className="pillar-link">
               Learn More <ArrowRight size={16} />
@@ -170,7 +160,7 @@ export const Home = () => {
             <div className="graphic-abstract">
               <div className="abstract-circle c1"></div>
               <div className="abstract-circle c2"></div>
-              <div className="abstract-node n1"><Activity size={18} /></div>
+              <div className="abstract-node n1"><FlaskConical size={18} /></div>
               <div className="abstract-node n2"><Users size={18} /></div>
               <div className="abstract-node n3"><GraduationCap size={18} /></div>
               <div className="abstract-line"></div>

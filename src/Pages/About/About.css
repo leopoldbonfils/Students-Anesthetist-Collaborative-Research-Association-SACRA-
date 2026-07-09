@@ -1,4 +1,92 @@
-/* Mission & Vision */
+/* About Hero Section */
+.about-hero-section {
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-surface);
+  text-align: center;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 4px solid var(--color-accent);
+}
+
+.about-hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+}
+
+.about-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(0, 168, 150, 0.15);
+  color: #02c39a; /* Bright Teal */
+  border: 1px solid var(--color-accent);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-caption);
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-base);
+}
+
+.about-hero-title {
+  font-size: 3.25rem;
+  font-weight: 850;
+  line-height: 1.2;
+  color: var(--color-surface);
+  margin-bottom: var(--space-base);
+  letter-spacing: -0.02em;
+  font-family: var(--font-heading);
+}
+
+.about-hero-subtitle {
+  font-size: var(--fs-body-lg);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin-bottom: var(--space-2xl);
+  max-width: 640px;
+}
+
+.about-hero-actions {
+  display: flex;
+  gap: var(--space-base);
+}
+
+/* Button overrides for white theme */
+.btn-white-solid {
+  background-color: var(--color-surface);
+  color: var(--color-primary-dark) !important;
+  border-color: var(--color-surface);
+}
+
+.btn-white-solid:hover {
+  background-color: transparent;
+  color: var(--color-surface) !important;
+  border-color: var(--color-surface);
+  transform: translateY(-2px);
+}
+
+.btn-white-outline {
+  background-color: transparent;
+  color: var(--color-surface) !important;
+  border-color: var(--color-surface);
+}
+
+.btn-white-outline:hover {
+  background-color: var(--color-surface);
+  color: var(--color-primary-dark) !important;
+  border-color: var(--color-surface);
+  transform: translateY(-2px);
+}
+
+/* Mission & Vision aligned with Mockup */
 .mission-vision-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -6,22 +94,40 @@
 }
 
 .mission-card, .vision-card {
-  padding: var(--space-xl);
+  padding: var(--space-xl) !important;
 }
 
-.mission-icon {
-  color: var(--color-accent);
+.mission-header-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
   margin-bottom: var(--space-base);
 }
 
-.mission-card h3, .vision-card h3 {
+.mission-card-icon {
+  flex-shrink: 0;
+}
+
+.mission-card-icon.blue {
+  color: var(--color-primary);
+}
+
+.mission-card-icon.teal {
+  color: var(--color-accent);
+}
+
+.mission-header-row h3 {
+  margin: 0;
   font-family: var(--font-heading);
-  margin-bottom: var(--space-sm);
+  font-size: var(--fs-h3);
+  color: var(--color-primary-dark);
 }
 
 .mission-card p, .vision-card p {
   color: var(--color-neutral-muted);
   line-height: 1.6;
+  font-size: var(--fs-body-sm);
+  margin: 0;
 }
 
 /* Core Values */
@@ -227,7 +333,7 @@
   color: var(--color-primary);
 }
 
-/* Responsive constraints */
+/* Responsive breakdowns */
 @media (max-width: 1024px) {
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -239,6 +345,17 @@
 }
 
 @media (max-width: 768px) {
+  .about-hero-title {
+    font-size: 2.5rem;
+  }
+  .about-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+  }
+  .about-hero-actions .btn {
+    width: 100%;
+  }
   .mission-vision-grid {
     grid-template-columns: 1fr;
     gap: var(--space-lg);

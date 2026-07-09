@@ -1,8 +1,8 @@
 import React from 'react';
-import { PageHeader } from '../../components/common/PageHeader';
-import { SectionTitle } from '../../components/common/SectionTitle';
 import { Card } from '../../components/ui/Card';
-import { Shield, Users, Lightbulb, Compass, Award, Mail } from 'lucide-react';
+import { SectionTitle } from '../../components/common/SectionTitle';
+import { Shield, Users, Lightbulb, Flag, Eye, Mail } from 'lucide-react';
+import simLabImg from '../../assets/images/sim-lab.png';
 import './About.css';
 
 export const About = () => {
@@ -71,27 +71,43 @@ export const About = () => {
 
   return (
     <div className="about-page animate-fade-in">
-      <PageHeader
-        title="About Our Association"
-        description="Fostering student innovation, surgical checklist adherence, and peer-to-peer anesthesia mentorship worldwide."
-      />
+      {/* About Page Custom Hero Banner overlaying sim-lab.png */}
+      <section className="about-hero-section" style={{ backgroundImage: `linear-gradient(rgba(0, 51, 102, 0.85), rgba(13, 24, 44, 0.95)), url(${simLabImg})` }}>
+        <div className="container about-hero-container">
+          <span className="about-hero-badge">Student-Led Excellence</span>
+          <h1 className="about-hero-title">
+            Advancing Global Anesthesia Through Student Innovation
+          </h1>
+          <p className="about-hero-subtitle">
+            Based at Kibogora Polytechnic, SACRA is a vibrant community of future anesthesiologists dedicated to pioneering research, clinical excellence, and collaborative learning within Rwanda and beyond.
+          </p>
+          <div className="about-hero-actions">
+            <a href="#mission" className="btn btn-white-solid">Explore Our Mission</a>
+            <a href="/research" className="btn btn-white-outline">View Research Hub</a>
+          </div>
+        </div>
+      </section>
 
-      {/* Mission & Vision */}
-      <section className="container section-padding mission-vision-section">
+      {/* Mission & Vision (Aligned with 2nd Screenshot) */}
+      <section id="mission" className="container section-padding mission-vision-section">
         <div className="mission-vision-grid">
           <Card className="mission-card" hoverEffect={false}>
-            <Compass className="mission-icon" size={32} />
-            <h3>Our Mission</h3>
+            <div className="mission-header-row">
+              <Flag className="mission-card-icon blue" size={28} />
+              <h3>Our Mission</h3>
+            </div>
             <p>
-              To democratize clinical research in anesthesiology by providing medical students and junior trainees with the skills, structural network, and mentorship needed to conduct robust, peer-reviewed clinical audits.
+              To foster a collaborative environment where students in anesthesia research can develop innovative solutions, enhance clinical outcomes, and advance their professional development through mentorship and global network.
             </p>
           </Card>
 
           <Card className="vision-card" hoverEffect={false}>
-            <Award className="mission-icon" size={32} />
-            <h3>Our Vision</h3>
+            <div className="mission-header-row">
+              <Eye className="mission-card-icon teal" size={28} />
+              <h3>Our Vision</h3>
+            </div>
             <p>
-              A global clinical community where standard anesthesia protocols, simulation-based training, and patient safety innovations are accessible, collaborative, and continually audited by future clinical leaders.
+              To become the leading African student research organization in anesthesia, recognized internationally for bridging the gap between clinical practice and student innovation.
             </p>
           </Card>
         </div>
