@@ -1,0 +1,219 @@
+/* Benefits Grid */
+.membership-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.benefit-card {
+  text-align: center;
+  align-items: center;
+  padding: var(--space-xl);
+}
+
+.benefit-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+}
+
+.benefit-card h4 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-body-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary-dark);
+}
+
+.benefit-card p {
+  color: var(--color-neutral-muted);
+  font-size: var(--fs-body-sm);
+  line-height: 1.5;
+}
+
+/* Tiers Section */
+.tiers-section {
+  background-color: var(--color-neutral-light);
+  padding: var(--space-3xl) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.tier-card {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl) !important;
+}
+
+.tier-card-popular {
+  border-color: var(--color-primary) !important;
+  box-shadow: var(--shadow-xl) !important;
+}
+
+.tier-popular-tag {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tier-name {
+  font-size: var(--fs-body-lg);
+  font-weight: 750;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-heading);
+}
+
+.tier-price-box {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+}
+
+.tier-price {
+  font-size: 2.75rem;
+  font-weight: 850;
+  color: var(--color-neutral-dark);
+  font-family: var(--font-heading);
+  line-height: 1;
+}
+
+.tier-period {
+  font-size: var(--fs-caption);
+  color: var(--color-neutral-muted);
+  font-weight: 500;
+}
+
+.tier-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.tier-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-size: var(--fs-body-sm);
+  color: var(--color-neutral-dark);
+  line-height: 1.4;
+}
+
+.feature-check-icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Membership Inquiry Form */
+.membership-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-card {
+  padding: var(--space-xl) !important;
+}
+
+.membership-signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-base);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-base);
+}
+
+.form-select-box {
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-body-sm);
+  color: var(--color-neutral-dark);
+  background-color: var(--color-surface);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: pointer;
+}
+
+.form-select-box:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 76, 153, 0.15);
+}
+
+.form-actions-row {
+  display: flex;
+  margin-top: var(--space-md);
+}
+
+.form-actions-row .btn {
+  width: 100%;
+}
+
+/* Form Success Card styles */
+.form-success-card {
+  padding: var(--space-2xl) !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+}
+
+.form-success-card .success-icon {
+  color: var(--color-success);
+}
+
+.form-success-card h3 {
+  font-size: var(--fs-h2);
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+}
+
+.form-success-card p {
+  font-size: var(--fs-body-sm);
+  color: var(--color-neutral-muted);
+  line-height: 1.6;
+  max-width: 440px;
+  margin: 0 var(--space-xs) var(--space-base);
+}
+
+/* Responsive breakdowns */
+@media (max-width: 1024px) {
+  .membership-benefits-grid, .tiers-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-base);
+  }
+  .tier-card-popular {
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-sm);
+  }
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-base);
+  }
+}

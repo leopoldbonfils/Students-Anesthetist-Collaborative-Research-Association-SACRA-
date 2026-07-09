@@ -1,0 +1,48 @@
+{
+  "posts": [
+    {
+      "id": "blog-01",
+      "title": "Unlocking Safer Pediatric Airway Management: SACRA Fellowship Findings",
+      "summary": "Exploring the latest findings on pediatric video laryngoscopy protocols developed by our 2025 research fellowship cohort.",
+      "category": "Research Insights",
+      "date": "July 01, 2026",
+      "readTime": "6 min read",
+      "author": "Elena Rostova",
+      "featured": true,
+      "content": "Anesthesiology has seen massive shifts over the last decade, and pediatric airway management is at the center of critical research. Over the past 12 months, the SACRA Pediatric Fellowship cohort conducted a multi-center observation study. Our core goal was to review if mandatory first-line video laryngoscopy in pediatric patients with anticipated difficult airways resulted in improved first-attempt success rates. The findings were striking: first-attempt success rose by 14.5% compared to direct laryngoscopy. This post unpacks our findings and highlights what this means for clinical guidelines."
+    },
+    {
+      "id": "blog-02",
+      "title": "Welcome Our 2026-2027 Executive Board Members",
+      "summary": "Announcing the newly elected student leaders heading the SACRA research committees and global outreach campaigns.",
+      "category": "Announcements",
+      "date": "June 18, 2026",
+      "readTime": "3 min read",
+      "author": "Dr. Sarah Jenkins",
+      "featured": false,
+      "content": "We are thrilled to officially announce the results of the 2026 SACRA Board Elections. This year saw record participation from 32 different medical schools across 10 countries. Our new board is dedicated to scaling our collaborative project networks, building peer-mentorship resources, and increasing our undergraduate student research grants. Read on to learn more about our new President, Vice President, and Research Chair!"
+    },
+    {
+      "id": "blog-03",
+      "title": "Virtual Simulation Training: The Future of Crisis Management?",
+      "summary": "Analyzing the effectiveness of virtual-reality simulation vs physical simulation for anesthesia crisis resource management.",
+      "category": "Education",
+      "date": "May 29, 2026",
+      "readTime": "5 min read",
+      "author": "Prof. Marcus Vance",
+      "featured": false,
+      "content": "Simulation training is a cornerstone of anesthesia education, but high-fidelity physical labs are costly and geographically limited. Can VR fill the gap? We set out to evaluate cognitive load and decision-making accuracy in medical students using VR headsets vs clinical dummy models. The findings show that while physical labs provide tactile training, VR offers comparable cognitive immersion, making it a viable pre-training resource before students step into clinical labs."
+    },
+    {
+      "id": "blog-04",
+      "title": "Outreach Highlight: Anesthesia Awareness in Rural Clinics",
+      "summary": "A review of our student campaigns in regional health centers, promoting airway checklists and monitoring protocols.",
+      "category": "Outreach",
+      "date": "April 15, 2026",
+      "readTime": "4 min read",
+      "author": "John Thompson",
+      "featured": false,
+      "content": "Patient safety in remote clinics is highly dependent on standardized checklists. Last month, SACRA members visited five rural primary care clinics. We introduced the WHO Safe Surgery Checklist and organized interactive simulations with clinic personnel. In this post, we review the checklist compliance audits and outline our upcoming outreach schedule."
+    }
+  ]
+}

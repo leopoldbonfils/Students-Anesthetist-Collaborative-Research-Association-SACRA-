@@ -1,0 +1,12 @@
+.app-layout-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content-layout {
+  flex: 1 0 auto;
+  padding-top: 72px; /* Standard sticky header spacing offset */
+  display: flex;
+  flex-direction: column;
+}

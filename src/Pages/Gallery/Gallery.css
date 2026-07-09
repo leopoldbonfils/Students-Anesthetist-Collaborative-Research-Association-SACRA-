@@ -1,0 +1,188 @@
+/* Filter Pill Buttons */
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-neutral-muted);
+  font-family: var(--font-heading);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-pill:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.filter-pill-active {
+  background-color: var(--color-primary);
+  color: var(--color-surface) !important;
+  border-color: var(--color-primary) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Photo Grid and Cards */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.gallery-card {
+  padding: 0 !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-visual-placeholder {
+  height: 180px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  color: var(--color-surface);
+}
+
+.gallery-visual-placeholder.block-blue {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #1e40af 100%);
+}
+
+.gallery-visual-placeholder.block-teal {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #0d9488 100%);
+}
+
+.gallery-visual-placeholder.block-navy {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #1e1b4b 100%);
+}
+
+.gallery-visual-placeholder.block-green {
+  background: linear-gradient(135deg, var(--color-success) 0%, #047857 100%);
+}
+
+.visual-category {
+  position: absolute;
+  bottom: var(--space-sm);
+  left: var(--space-sm);
+  background-color: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(2px);
+  color: var(--color-surface);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.zoom-icon {
+  opacity: 0.25;
+  transform: scale(0.9);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+.gallery-card:hover .zoom-icon {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.gallery-card-content {
+  padding: var(--space-base);
+}
+
+.gallery-photo-title {
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-xs);
+  font-family: var(--font-heading);
+}
+
+.gallery-photo-meta {
+  display: flex;
+  gap: var(--space-sm);
+  font-size: var(--fs-caption);
+  color: var(--color-neutral-muted);
+}
+
+.gallery-photo-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Lightbox Modal */
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.lightbox-visual {
+  height: 280px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-surface);
+}
+
+.lightbox-visual.block-blue {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #1e40af 100%);
+}
+
+.lightbox-visual.block-teal {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #0d9488 100%);
+}
+
+.lightbox-visual.block-navy {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #1e1b4b 100%);
+}
+
+.lightbox-visual.block-green {
+  background: linear-gradient(135deg, var(--color-success) 0%, #047857 100%);
+}
+
+.lightbox-visual-icon {
+  opacity: 0.3;
+}
+
+.lightbox-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.lightbox-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lightbox-date {
+  font-size: var(--fs-body-sm);
+  color: var(--color-neutral-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.lightbox-desc {
+  font-size: var(--fs-body-sm);
+  color: var(--color-neutral-dark);
+  line-height: 1.6;
+  margin: 0;
+}

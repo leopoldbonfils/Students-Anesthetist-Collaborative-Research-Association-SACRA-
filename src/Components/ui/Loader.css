@@ -1,0 +1,124 @@
+.loader-spinner-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3xl) 0;
+  width: 100%;
+}
+
+.loader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-primary-light);
+  border-radius: var(--radius-full);
+  border-top-color: var(--color-primary);
+  animation: loader-spin 1s linear infinite;
+}
+
+/* Skeleton Layouts */
+.loader-skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  width: 100%;
+  margin-top: var(--space-lg);
+}
+
+.skeleton-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-base);
+}
+
+.skeleton-thumb {
+  height: 140px;
+  background-color: #e2e8f0;
+  border-radius: var(--radius-md);
+  width: 100%;
+}
+
+.skeleton-line {
+  height: 16px;
+  background-color: #e2e8f0;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-line.title {
+  width: 60%;
+  height: 20px;
+}
+
+.skeleton-line.text {
+  width: 100%;
+}
+
+.skeleton-line.text.short {
+  width: 45%;
+}
+
+.skeleton-line.footer {
+  width: 30%;
+  height: 24px;
+  margin-top: var(--space-sm);
+  border-radius: var(--radius-sm);
+}
+
+/* Skeleton Table */
+.loader-skeleton-table {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-base);
+  width: 100%;
+}
+
+.skeleton-table-header {
+  height: 40px;
+  background-color: #e2e8f0;
+  border-radius: var(--radius-md);
+  width: 100%;
+}
+
+.skeleton-table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-lg);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.skeleton-table-cell {
+  height: 16px;
+  background-color: #e2e8f0;
+  border-radius: var(--radius-sm);
+}
+
+/* Animations */
+.pulse {
+  animation: pulse-shine 1.5s infinite ease-in-out;
+}
+
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-shine {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}

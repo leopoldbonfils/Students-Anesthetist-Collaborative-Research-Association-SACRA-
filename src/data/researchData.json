@@ -1,0 +1,74 @@
+{
+  "activeStudies": [
+    {
+      "id": "study-01",
+      "title": "Pediatric Anesthesia Induction: Non-Pharmacological Distraction Techniques",
+      "investigator": "Dr. Sarah Jenkins & Research Group A",
+      "status": "Active",
+      "description": "Evaluating the efficacy of immersive VR gaming and interactive projection screens in reducing pre-operative anxiety during mask induction in children aged 4-10.",
+      "progress": 68
+    },
+    {
+      "id": "study-02",
+      "title": "Post-operative Cognitive Dysfunction in Geriatric Patients: Biomarker Analysis",
+      "investigator": "Prof. Marcus Vance & Team Beta",
+      "status": "Recruiting",
+      "description": "A multicenter prospective study identifying serum S100B and inflammatory cytokines to predict early cognitive declines after orthopedic surgeries under general anesthesia.",
+      "progress": 35
+    },
+    {
+      "id": "study-03",
+      "title": "AI-Driven Patient Monitoring during Deep Sedation in Non-Operating Room Settings",
+      "investigator": "Elena Rostova, Lead Student Researcher",
+      "status": "Active",
+      "description": "Validating neural network models trained on plethysmograph waveform dynamics to predict respiratory depression 60 seconds prior to clinical onset.",
+      "progress": 82
+    },
+    {
+      "id": "study-04",
+      "title": "Ultra-Low-Dose Dexmedetomidine for Post-Anesthetic Shivering in Recovery",
+      "investigator": "Dr. Kenji Tanaka & Clinical Fellows",
+      "status": "Completed",
+      "description": "Double-blind randomized controlled trial testing sub-clinical infusions of dexmedetomidine versus placebo for rapid relief of shivering in PACU.",
+      "progress": 100
+    }
+  ],
+  "publications": [
+    {
+      "id": "pub-01",
+      "title": "Epidural Volume Expansion in Obstetric Patients: A Systematic Review of Combined Spinal-Epidural Techniques",
+      "authors": "L. Chen, M. Gable, S. Jenkins",
+      "journal": "International Journal of Obstetric Anesthesia",
+      "date": "2026-03-12",
+      "doi": "10.1016/j.ijoa.2026.103982",
+      "url": "https://doi.org/10.1016/j.ijoa.2026.103982"
+    },
+    {
+      "id": "pub-02",
+      "title": "Student-Led Collaborative Research Networks in Anesthesiology: Barriers and Facilitators to Global Integration",
+      "authors": "SACRA Network Researchers, E. Rostova, H. Patel",
+      "journal": "BMC Medical Education",
+      "date": "2025-11-05",
+      "doi": "10.1186/s12909-025-4892-y",
+      "url": "https://doi.org/10.1186/s12909-025-4892-y"
+    },
+    {
+      "id": "pub-03",
+      "title": "Optimal Airway Management in Remote Rural Clinics: A Simulation-Based Student Trial",
+      "authors": "M. Vance, J. Thompson, A. Al-Mansoor",
+      "journal": "Anesthesia & Analgesia Clinical Reports",
+      "date": "2025-08-19",
+      "doi": "10.1213/XAA.0000000000001944",
+      "url": "https://doi.org/10.1213/XAA.0000000000001944"
+    },
+    {
+      "id": "pub-04",
+      "title": "Perioperative Hypothermia Prevention: A Cross-Sectional Quality Improvement Audit in Academic Hospitals",
+      "authors": "A. Carter, L. Chen, O. Peterson",
+      "journal": "Journal of Clinical Anesthesia",
+      "date": "2025-04-30",
+      "doi": "10.1016/j.jclinane.2025.111420",
+      "url": "https://doi.org/10.1016/j.jclinane.2025.111420"
+    }
+  ]
+}
