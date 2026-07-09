@@ -1,47 +1,241 @@
-/* Benefits Grid */
-.membership-benefits-grid {
+/* Membership Hero Section */
+.membership-hero-section {
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+  background-color: #f0f6ff; /* Soft Light Blue */
+  color: var(--color-neutral-dark);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.membership-hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+}
+
+.membership-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(0, 76, 153, 0.08);
+  color: var(--color-primary);
+  border: 1px solid rgba(0, 76, 153, 0.15);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-caption);
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-base);
+}
+
+.membership-hero-title {
+  font-size: 3.25rem;
+  font-weight: 850;
+  line-height: 1.2;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-base);
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+.membership-hero-subtitle {
+  font-size: var(--fs-body-lg);
+  color: var(--color-neutral-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-2xl);
+  max-width: 640px;
+}
+
+.membership-hero-actions {
+  display: flex;
+  gap: var(--space-base);
+  align-items: center;
+}
+
+.btn-start-app {
+  background-color: var(--color-primary);
+  color: var(--color-surface) !important;
+  border: 2px solid var(--color-primary);
+  padding: 10px 26px;
+  border-radius: var(--radius-full); /* Fully Rounded */
+  font-weight: 700;
+  transition: all var(--transition-fast);
+}
+
+.btn-start-app:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-view-tiers {
+  background-color: transparent;
+  color: var(--color-primary-dark) !important;
+  border: 2px solid transparent;
+  padding: 10px 26px;
+  font-weight: 700;
+  transition: all var(--transition-fast);
+}
+
+.btn-view-tiers:hover {
+  color: var(--color-primary) !important;
+  transform: translateY(-2px);
+}
+
+/* Why Join SACRA Section Aligned with Mockup */
+.why-join-section {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+
+.why-section-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.why-section-header h2 {
+  font-size: var(--fs-h2);
+  font-weight: 850;
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  margin-bottom: 8px;
+}
+
+.why-section-header .teal-line {
+  width: 48px;
+  height: 3px;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-full);
+}
+
+.why-join-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1.4fr 1fr;
   gap: var(--space-xl);
 }
 
-.benefit-card {
-  text-align: center;
-  align-items: center;
+.why-card {
   padding: var(--space-xl);
 }
 
-.benefit-icon-wrapper {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-full);
-  background-color: var(--color-primary-light);
-  color: var(--color-primary);
+.why-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: var(--space-lg);
 }
 
-.benefit-card h4 {
-  font-family: var(--font-heading);
+.why-icon-box.blue-icon-box {
+  background-color: rgba(0, 76, 153, 0.08);
+  color: var(--color-primary);
+}
+
+.why-icon-box.white-icon-box {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-surface);
+}
+
+/* Horizontal Mentorship Card */
+.horizontal-mentorship-card {
+  display: flex;
+  flex-direction: row !important;
+  overflow: hidden;
+  padding: 0 !important;
+  border: 1px solid var(--color-border);
+  background-color: #f8fafc;
+}
+
+.mentorship-card-content {
+  flex: 1.1;
+  padding: var(--space-xl);
+}
+
+.mentorship-card-content h3 {
   font-size: var(--fs-body-lg);
-  margin-bottom: var(--space-sm);
+  font-weight: 750;
   color: var(--color-primary-dark);
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-heading);
 }
 
-.benefit-card p {
-  color: var(--color-neutral-muted);
+.mentorship-card-content p {
   font-size: var(--fs-body-sm);
-  line-height: 1.5;
+  color: var(--color-neutral-muted);
+  line-height: 1.6;
+  margin: 0;
 }
 
-/* Tiers Section */
+.mentorship-card-visual {
+  flex: 0.9;
+  align-self: stretch;
+  background-color: #0f172a;
+  overflow: hidden;
+}
+
+.mentorship-lab-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Green Grants Card */
+.green-grants-card {
+  background-color: #007f5f; /* Deep Emerald Green */
+  color: var(--color-surface);
+  border: none;
+}
+
+.green-grants-card h3 {
+  font-size: var(--fs-body-lg);
+  font-weight: 750;
+  color: var(--color-surface);
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-heading);
+}
+
+.green-grants-card p {
+  font-size: var(--fs-body-sm);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Tiers Pricing Grid */
 .tiers-section {
   background-color: var(--color-neutral-light);
   padding: var(--space-3xl) 0;
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
+}
+
+.section-title-centered {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--space-2xl) auto;
+}
+
+.section-title-centered h2 {
+  font-size: var(--fs-h2);
+  font-weight: 850;
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  margin-bottom: var(--space-xs);
+}
+
+.section-title-centered p {
+  font-size: var(--fs-body-sm);
+  color: var(--color-neutral-muted);
+  line-height: 1.5;
+  margin: 0;
 }
 
 .tiers-grid {
@@ -51,29 +245,28 @@
 }
 
 .tier-card {
-  padding: var(--space-xl);
+  padding: var(--space-2xl) !important;
+  background-color: var(--color-surface);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  background-color: var(--color-surface);
-  border-radius: var(--radius-xl) !important;
+  border: 1px solid var(--color-border);
+  position: relative;
 }
 
 .tier-card-popular {
-  border-color: var(--color-primary) !important;
-  box-shadow: var(--shadow-xl) !important;
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-lg);
 }
 
 .tier-popular-tag {
   position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: var(--space-base);
+  right: var(--space-base);
 }
 
 .tier-name {
   font-size: var(--fs-body-lg);
-  font-weight: 750;
+  font-weight: 850;
   color: var(--color-primary-dark);
   margin-bottom: var(--space-sm);
   font-family: var(--font-heading);
@@ -82,30 +275,31 @@
 .tier-price-box {
   display: flex;
   align-items: baseline;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-xl);
 }
 
 .tier-price {
   font-size: 2.75rem;
   font-weight: 850;
-  color: var(--color-neutral-dark);
-  font-family: var(--font-heading);
+  color: var(--color-primary-dark);
   line-height: 1;
+  font-family: var(--font-heading);
 }
 
 .tier-period {
-  font-size: var(--fs-caption);
+  font-size: var(--fs-body-sm);
   color: var(--color-neutral-muted);
-  font-weight: 500;
+  margin-left: 4px;
 }
 
 .tier-features-list {
   list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
-  width: 100%;
+  gap: var(--space-base);
+  flex-grow: 1;
 }
 
 .tier-feature-item {
@@ -123,14 +317,14 @@
   margin-top: 2px;
 }
 
-/* Membership Inquiry Form */
+/* Membership Inquiry Form styling */
 .membership-form-container {
   max-width: 600px;
   margin: 0 auto;
 }
 
 .form-card {
-  padding: var(--space-xl) !important;
+  padding: var(--space-2xl) !important;
 }
 
 .membership-signup-form {
@@ -153,7 +347,6 @@
   color: var(--color-neutral-dark);
   background-color: var(--color-surface);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-  cursor: pointer;
 }
 
 .form-select-box:focus {
@@ -163,31 +356,26 @@
 }
 
 .form-actions-row {
-  display: flex;
-  margin-top: var(--space-md);
+  margin-top: var(--space-lg);
 }
 
 .form-actions-row .btn {
   width: 100%;
 }
 
-/* Form Success Card styles */
 .form-success-card {
   padding: var(--space-2xl) !important;
+  text-align: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: var(--space-md);
-}
-
-.form-success-card .success-icon {
-  color: var(--color-success);
 }
 
 .form-success-card h3 {
   font-size: var(--fs-h2);
   color: var(--color-primary-dark);
+  margin-bottom: var(--space-sm);
+  margin-top: var(--space-base);
   font-family: var(--font-heading);
 }
 
@@ -196,22 +384,40 @@
   color: var(--color-neutral-muted);
   line-height: 1.6;
   max-width: 440px;
-  margin: 0 var(--space-xs) var(--space-base);
+  margin-bottom: var(--space-xl);
 }
 
 /* Responsive breakdowns */
 @media (max-width: 1024px) {
-  .membership-benefits-grid, .tiers-grid {
+  .why-join-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-base);
   }
-  .tier-card-popular {
-    margin-top: var(--space-sm);
-    margin-bottom: var(--space-sm);
+  .tiers-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .membership-hero-title {
+    font-size: 2.5rem;
+  }
+  .membership-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+  }
+  .membership-hero-actions .btn {
+    width: 100%;
+  }
+  .horizontal-mentorship-card {
+    flex-direction: column !important;
+  }
+  .mentorship-card-visual {
+    width: 100%;
+    height: 180px;
+  }
   .form-row {
     grid-template-columns: 1fr;
     gap: var(--space-base);

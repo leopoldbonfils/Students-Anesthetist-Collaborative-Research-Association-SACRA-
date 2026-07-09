@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { PageHeader } from '../../components/common/PageHeader';
-import { SectionTitle } from '../../components/common/SectionTitle';
 import { Card } from '../../components/ui/Card';
 import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
-import { Globe, GraduationCap, Award, Check, CheckCircle2 } from 'lucide-react';
+import { Users, FileText, Check, CheckCircle2 } from 'lucide-react';
+import simLabImg from '../../assets/images/sim-lab.png';
 import './Membership.css';
 
 export const Membership = () => {
@@ -14,24 +13,6 @@ export const Membership = () => {
   const [university, setUniversity] = useState('');
   const [studyYear, setStudyYear] = useState('clinical');
   const [submitStatus, setSubmitStatus] = useState('idle'); // idle, loading, success
-
-  const benefits = [
-    {
-      icon: <Globe size={24} />,
-      title: 'Global Chapter Network',
-      description: 'Connect with medical students and clinical residents at over 50 university medical hubs globally.'
-    },
-    {
-      icon: <GraduationCap size={24} />,
-      title: 'Research Advising',
-      description: 'Access statistical advisory hours, study protocol reviews, and peer-to-peer critique cycles.'
-    },
-    {
-      icon: <Award size={24} />,
-      title: 'Fellowship & Grants',
-      description: 'Eligibility to apply for SACRA Student Research Fellowship awards and travel workshops grants.'
-    }
-  ];
 
   const tiers = [
     {
@@ -91,35 +72,66 @@ export const Membership = () => {
 
   return (
     <div className="membership-page animate-fade-in">
-      <PageHeader
-        title="Become a Member"
-        description="Connect with leading student researchers, access peer mentorship, and audit clinical surgery checklists."
-      />
+      {/* Soft Blue Hero Section (Aligned with Mockup) */}
+      <section className="membership-hero-section">
+        <div className="container membership-hero-container">
+          <span className="membership-hero-badge">Advancing Anesthesiology</span>
+          <h1 className="membership-hero-title">Join a Community of Future Anesthetists</h1>
+          <p className="membership-hero-subtitle">
+            Empowering the next generation of medical researchers and clinicians through collaborative innovation, mentorship, and clinical excellence.
+          </p>
+          <div className="membership-hero-actions">
+            <a href="#apply" className="btn btn-start-app">Start Application</a>
+            <a href="#tiers" className="btn btn-view-tiers">View Tiers</a>
+          </div>
+        </div>
+      </section>
 
-      {/* Benefits Grid */}
-      <section className="container section-padding">
-        <SectionTitle
-          title="Why Join SACRA?"
-          subtitle="Empowering student anesthetists to acquire robust clinical training and publish academic audits."
-        />
-        <div className="membership-benefits-grid">
-          {benefits.map((ben, idx) => (
-            <Card key={idx} className="benefit-card" hoverEffect={true}>
-              <div className="benefit-icon-wrapper">{ben.icon}</div>
-              <h4>{ben.title}</h4>
-              <p>{ben.description}</p>
-            </Card>
-          ))}
+      {/* Why Join SACRA Section (Aligned with Mockup) */}
+      <section className="why-join-section container">
+        <div className="why-section-header">
+          <h2>Why Join SACRA?</h2>
+          <div className="teal-line"></div>
+        </div>
+
+        <div className="why-join-grid">
+          {/* Global Mentorship Network (Horizontal card with image on right) */}
+          <Card className="why-card horizontal-mentorship-card" hoverEffect={false}>
+            <div className="mentorship-card-content">
+              <div className="why-icon-box blue-icon-box">
+                <Users size={24} />
+              </div>
+              <h3>Global Mentorship Network</h3>
+              <p>
+                Connect with leading professionals and senior anesthetists worldwide. Get guidance on career paths, research methodology, and peer review publishing pipelines.
+              </p>
+            </div>
+            <div className="mentorship-card-visual">
+              <img src={simLabImg} alt="Students in clinical lab" className="mentorship-lab-img" />
+            </div>
+          </Card>
+
+          {/* Research Grants (Solid Green Card) */}
+          <Card className="why-card green-grants-card" hoverEffect={false}>
+            <div className="why-icon-box white-icon-box">
+              <FileText size={24} />
+            </div>
+            <h3>Research Grants</h3>
+            <p>
+              Exclusive access to annual funding opportunities for collaborative anesthesia research projects, abstract submissions, and travel to international clinical symposiums.
+            </p>
+          </Card>
         </div>
       </section>
 
       {/* Tiers Pricing Grid */}
-      <section className="tiers-section">
+      <section id="tiers" className="tiers-section">
         <div className="container">
-          <SectionTitle
-            title="Membership Tiers"
-            subtitle="Choose a plan designed for medical students, clinical residents, or entire university chapters."
-          />
+          <div className="section-title-centered">
+            <h2>Membership Tiers</h2>
+            <p>Choose a plan designed for medical students, clinical residents, or entire university chapters.</p>
+          </div>
+          
           <div className="tiers-grid">
             {tiers.map((tier, idx) => (
               <Card key={idx} className={`tier-card ${tier.popular ? 'tier-card-popular' : ''}`} hoverEffect={true}>
@@ -144,12 +156,12 @@ export const Membership = () => {
       </section>
 
       {/* Application Form Section */}
-      <section className="container section-padding form-section">
+      <section id="apply" className="container section-padding form-section">
         <div className="membership-form-container">
-          <SectionTitle
-            title="Submit Your Membership Inquiry"
-            subtitle="Fill out the registration details below to activate your student credentials and join the network."
-          />
+          <div className="section-title-centered">
+            <h2>Submit Your Membership Inquiry</h2>
+            <p>Fill out the registration details below to activate your student credentials and join the network.</p>
+          </div>
 
           {submitStatus === 'success' ? (
             <Card className="form-success-card animate-scale-in" hoverEffect={false}>
