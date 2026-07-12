@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Card } from '../../components/ui/Card';
-import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
-import { Users, FileText, Check, CheckCircle2 } from 'lucide-react';
+import { Users, FileText, CheckCircle2 } from 'lucide-react';
 import simLabImg from '../../assets/images/sim-lab.png';
 import './Membership.css';
 
@@ -13,45 +12,6 @@ export const Membership = () => {
   const [university, setUniversity] = useState('');
   const [studyYear, setStudyYear] = useState('clinical');
   const [submitStatus, setSubmitStatus] = useState('idle'); // idle, loading, success
-
-  const tiers = [
-    {
-      name: 'Free Student Tier',
-      price: '$0',
-      period: 'forever',
-      popular: true,
-      features: [
-        'Access to regional student audits',
-        'Join Slack community channel workspace',
-        'Attend monthly webinar lectures',
-        'Digital Certificate of Membership'
-      ]
-    },
-    {
-      name: 'Resident / Fellow Tier',
-      price: '$15',
-      period: 'annually',
-      popular: false,
-      features: [
-        'All student tier features plus:',
-        'Lead multi-center research projects',
-        'Apply for Travel grants to meetings',
-        'Vote in SACRA executive board elections'
-      ]
-    },
-    {
-      name: 'Institutional Chapter',
-      price: '$120',
-      period: 'annually',
-      popular: false,
-      features: [
-        'All resident tier features plus:',
-        'Sim-Lab curriculum templates licenses',
-        'Dedicated advisory statistics team hours',
-        'Symposium hosting support package'
-      ]
-    }
-  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -82,7 +42,6 @@ export const Membership = () => {
           </p>
           <div className="membership-hero-actions">
             <a href="#apply" className="btn btn-start-app">Start Application</a>
-            <a href="#tiers" className="btn btn-view-tiers">View Tiers</a>
           </div>
         </div>
       </section>
@@ -124,37 +83,6 @@ export const Membership = () => {
         </div>
       </section>
 
-      {/* Tiers Pricing Grid */}
-      <section id="tiers" className="tiers-section">
-        <div className="container">
-          <div className="section-title-centered">
-            <h2>Membership Tiers</h2>
-            <p>Choose a plan designed for medical students, clinical residents, or entire university chapters.</p>
-          </div>
-          
-          <div className="tiers-grid">
-            {tiers.map((tier, idx) => (
-              <Card key={idx} className={`tier-card ${tier.popular ? 'tier-card-popular' : ''}`} hoverEffect={true}>
-                {tier.popular && <Badge text="Most Popular" type="success" className="tier-popular-tag" />}
-                <h3 className="tier-name">{tier.name}</h3>
-                <div className="tier-price-box">
-                  <span className="tier-price">{tier.price}</span>
-                  <span className="tier-period">/ {tier.period}</span>
-                </div>
-                <ul className="tier-features-list">
-                  {tier.features.map((feat, fIdx) => (
-                    <li key={fIdx} className="tier-feature-item">
-                      <Check className="feature-check-icon" size={16} />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Application Form Section */}
       <section id="apply" className="container section-padding form-section">
         <div className="membership-form-container">
@@ -186,7 +114,7 @@ export const Membership = () => {
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                       required
-                      placeholder="Jane"
+                      placeholder="Enter first name"
                       disabled={submitStatus === 'loading'}
                     />
                   </div>
@@ -198,7 +126,7 @@ export const Membership = () => {
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
                       required
-                      placeholder="Doe"
+                      placeholder="Enter last name"
                       disabled={submitStatus === 'loading'}
                     />
                   </div>
@@ -212,7 +140,7 @@ export const Membership = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    placeholder="jane.doe@university.edu"
+                    placeholder="Enter email address"
                     disabled={submitStatus === 'loading'}
                   />
                 </div>
@@ -225,7 +153,7 @@ export const Membership = () => {
                     value={university}
                     onChange={(e) => setUniversity(e.target.value)}
                     required
-                    placeholder="Harvard Medical School"
+                    placeholder="Enter university / hospital affiliation"
                     disabled={submitStatus === 'loading'}
                   />
                 </div>
@@ -239,8 +167,8 @@ export const Membership = () => {
                     disabled={submitStatus === 'loading'}
                     className="form-select-box"
                   >
-                    <option value="pre-clinical">Pre-Clinical Years (MD/DO 1-2)</option>
-                    <option value="clinical">Clinical Clerkship Years (MD/DO 3-4)</option>
+                    <option value="pre-clinical">Pre-Clinical Years</option>
+                    <option value="clinical">Clinical Clerkship Years</option>
                     <option value="resident">Anesthesia Resident / Registrar</option>
                     <option value="fellow">Clinical Fellow</option>
                   </select>
