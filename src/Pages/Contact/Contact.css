@@ -129,50 +129,119 @@
   transform: translateY(-2px);
 }
 
-/* Stylized Vector Map */
-.stylized-map-card {
+/* Interactive Leaflet Map */
+.interactive-map-card {
   padding: 0 !important;
   border: 1px solid var(--color-border);
   overflow: hidden;
   border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--color-surface);
+  transition: box-shadow var(--transition-fast);
 }
 
-.map-lake-bg {
+.interactive-map-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.map-container {
   width: 100%;
+  height: 350px;
+  background-color: #f8fafc;
+  z-index: 1;
+}
+
+/* Custom Marker Styling */
+.leaflet-custom-marker-wrapper {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important; /* Ensure the text label doesn't clip */
+}
+
+.custom-map-pin-google {
+  display: flex;
+  align-items: center;
   position: relative;
-  background-color: #e2e8f0;
+  width: 220px;
+  height: 40px;
 }
 
-.map-vector-graphic {
-  display: block;
-  width: 100%;
-  height: auto;
+.pin-svg-google {
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.35));
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
 }
 
-.map-badge-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(15, 23, 42, 0.85);
-  color: var(--color-surface);
-  text-align: center;
-  font-size: 9px;
-  font-weight: 700;
-  padding: 6px 12px;
-  letter-spacing: 0.05em;
+.pin-svg-google:hover {
+  transform: scale(1.15);
+}
+
+.pin-label-google {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 800; /* Bold all-caps */
+  color: #c5221f; /* Google Maps Red Label */
+  text-shadow: 
+    -2px -2px 0 #fff,  
+     2px -2px 0 #fff,
+    -2px  2px 0 #fff,
+     2px  2px 0 #fff,
+    -1px -1px 0 #fff,
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff;
+  line-height: 1.1;
+  margin-left: 6px;
   text-transform: uppercase;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  pointer-events: none; /* Make text click-through to map */
 }
 
-.pulse-circle {
-  transform-origin: 50px 140px;
-  animation: mapPulse 2s infinite ease-in-out;
+/* Leaflet Popup Overrides & Custom Styling */
+.custom-map-popup-wrapper .leaflet-popup-content-wrapper {
+  background: var(--color-surface) !important;
+  color: var(--color-primary-dark) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 10px 25px -5px rgba(13, 27, 42, 0.15), 0 8px 10px -6px rgba(13, 27, 42, 0.15) !important;
+  border: 1px solid var(--color-border) !important;
+  padding: 2px !important;
+  font-family: var(--font-sans) !important;
 }
 
-@keyframes mapPulse {
-  0% { transform: scale(0.9); opacity: 0.6; }
-  50% { transform: scale(1.4); opacity: 0.1; }
-  100% { transform: scale(0.9); opacity: 0.6; }
+.custom-map-popup-wrapper .leaflet-popup-content {
+  margin: var(--space-base) !important;
+  min-width: 200px;
+}
+
+.custom-map-popup-wrapper .leaflet-popup-tip {
+  background: var(--color-surface) !important;
+  border-left: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: none !important;
+}
+
+.map-popup-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.map-popup-header {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+}
+
+.map-popup-body {
+  font-size: 0.8rem;
+  color: var(--color-neutral-muted);
+  line-height: 1.4;
 }
 
 /* Right contact form card */

@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { MapPin, Mail, Phone, Share2, Globe, Send, CheckCircle2 } from 'lucide-react';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 import './Contact.css';
 
 export const Contact = () => {
@@ -10,6 +12,75 @@ export const Contact = () => {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [formStatus, setFormStatus] = useState('idle'); // idle, loading, success
+  const mapContainerRef = useRef(null);
+  const mapInstanceRef = useRef(null);
+
+  useEffect(() => {
+    if (!mapContainerRef.current) return;
+    if (mapInstanceRef.current) return;
+
+    // Coordinate center for Kibogora Polytechnic Main Campus, Rwanda
+    const position = [-2.3251, 29.1336];
+
+    // Initialize Leaflet Map with attribution control disabled
+    const map = L.map(mapContainerRef.current, {
+      center: position,
+      zoom: 12,
+      zoomControl: true,
+      scrollWheelZoom: false,
+      attributionControl: false, // Removes Leaflet attribution
+    });
+
+    mapInstanceRef.current = map;
+
+    // Add Google Maps Roadmap Tile Layer
+    L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+      maxZoom: 20,
+      subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+    }).addTo(map);
+
+    // Custom Google Maps style Red Pin and Text Label Markup
+    const customPinMarkup = `
+      <div class="custom-map-pin-google">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="pin-svg-google">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#ea4335" />
+        </svg>
+        <span class="pin-label-google">KIBOGORA<br/>POLYTECHNIC</span>
+      </div>
+    `;
+
+    const customIcon = L.divIcon({
+      html: customPinMarkup,
+      className: 'leaflet-custom-marker-wrapper',
+      iconSize: [200, 40],
+      iconAnchor: [16, 32],
+      popupAnchor: [0, -32]
+    });
+
+    // Add marker
+    const marker = L.marker(position, { icon: customIcon }).addTo(map);
+
+    // Bind custom styled popup (opens on click)
+    const popupContent = `
+      <div class="map-popup-card">
+        <div class="map-popup-header">SACRA Headquarters</div>
+        <div class="map-popup-body">Kibogora Polytechnic – Rusizi Campus, Rwanda</div>
+      </div>
+    `;
+
+    marker.bindPopup(popupContent, {
+      closeButton: false,
+      offset: [0, -10],
+      className: 'custom-map-popup-wrapper'
+    });
+
+    return () => {
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.remove();
+        mapInstanceRef.current = null;
+      }
+    };
+  }, []);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -51,7 +122,7 @@ export const Contact = () => {
               </div>
               <div className="info-item-text">
                 <h4>Office Address</h4>
-                <p>Kibogora Polytechnic, Rusizi Campus<br />Western Province, Rwanda</p>
+                <p>Kibogora Polytechnic<br />Rusizi Campus, Rwanda</p>
               </div>
             </div>
 
@@ -62,7 +133,7 @@ export const Contact = () => {
               </div>
               <div className="info-item-text">
                 <h4>Direct Email</h4>
-                <p>info@sacra-research.org</p>
+                <p><a href="mailto:sacra.59@yahoo.com" style={{color:'inherit', textDecoration:'none'}}>sacra.59@yahoo.com</a></p>
               </div>
             </div>
 
@@ -73,7 +144,7 @@ export const Contact = () => {
               </div>
               <div className="info-item-text">
                 <h4>Phone</h4>
-                <p>+250 788 000 000</p>
+                <p><a href="tel:+250789402382" style={{color:'inherit', textDecoration:'none'}}>+250 789 402 382</a></p>
               </div>
             </div>
           </div>
@@ -87,27 +158,9 @@ export const Contact = () => {
             </div>
           </div>
 
-          {/* Stylized Visual Map Component of Rwanda/Rusizi */}
-          <Card className="stylized-map-card" hoverEffect={false}>
-            <div className="map-lake-bg">
-              {/* Draw Lake Kivu and Rusizi Campus indicator using pure SVGs */}
-              <svg viewBox="0 0 300 200" width="100%" height="100%" className="map-vector-graphic">
-                {/* Land masses */}
-                <rect x="0" y="0" width="300" height="200" fill="#e2e8f0" />
-                {/* Lake Kivu shape */}
-                <path d="M10 30 C 50 10, 80 40, 60 90 C 40 140, 70 170, 30 190 L 0 200 L 0 0 Z" fill="#93c5fd" />
-                {/* Boundary line */}
-                <path d="M60 90 Q 90 120, 70 170" stroke="#cbd5e1" strokeWidth="2" strokeDasharray="4 2" fill="none" />
-                {/* Rusizi Campus Indicator */}
-                <circle cx="50" cy="140" r="10" fill="rgba(0, 92, 191, 0.2)" className="pulse-circle" />
-                <circle cx="50" cy="140" r="4" fill="#005cbf" />
-                {/* Text Labels */}
-                <text x="70" y="145" fill="#1e293b" fontSize="10" fontWeight="700" fontFamily="sans-serif">RUSIZI CAMPUS</text>
-                <text x="15" y="100" fill="#2563eb" fontSize="10" fontWeight="600" fontFamily="sans-serif" transform="rotate(-75, 15, 100)">LAKE KIVU</text>
-                <text x="140" y="80" fill="#64748b" fontSize="11" fontWeight="600" fontFamily="sans-serif">WESTERN PROVINCE</text>
-              </svg>
-              <div className="map-badge-overlay">MAP LOCATION | KIBOGORA POLYTECHNIC</div>
-            </div>
+          {/* Interactive Leaflet Map of Rwanda */}
+          <Card className="interactive-map-card" hoverEffect={false}>
+            <div ref={mapContainerRef} className="map-container" />
           </Card>
         </div>
 
@@ -133,7 +186,7 @@ export const Contact = () => {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       required
-                      placeholder="Dr. Jane Doe"
+                      placeholder="Enter your name"
                       disabled={formStatus === 'loading'}
                     />
                   </div>
@@ -146,7 +199,7 @@ export const Contact = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      placeholder="jane@example.com"
+                      placeholder="Enter your email address"
                       disabled={formStatus === 'loading'}
                     />
                   </div>

@@ -65,6 +65,16 @@ export const Footer = () => {
           </ul>
         </div>
 
+        {/* Column 3: Contact Info */}
+        <div className="footer-links-col">
+          <h5 className="footer-col-title">Contact</h5>
+          <ul className="footer-links-list footer-contact-list">
+            <li>Kibogora Polytechnic<br />Rusizi Campus, Rwanda</li>
+            <li><a href="mailto:sacra.59@yahoo.com">sacra.59@yahoo.com</a></li>
+            <li><a href="tel:+250789402382">+250 789 402 382</a></li>
+          </ul>
+        </div>
+
         {/* Column 4: Newsletter */}
         <div className="footer-newsletter-col">
           <Newsletter />

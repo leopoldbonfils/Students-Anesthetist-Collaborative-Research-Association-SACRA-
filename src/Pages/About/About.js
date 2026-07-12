@@ -177,7 +177,7 @@ export const About = () => {
                       <circle cx="4" cy="4" r="2"/>
                     </svg>
                   </a>
-                  <a href="mailto:info@sacra.org" className="team-social-icon" aria-label="Email"><Mail size={16} /></a>
+                  <a href="mailto:sacra.59@yahoo.com" className="team-social-icon" aria-label="Email"><Mail size={16} /></a>
                 </div>
               </Card>
             ))}

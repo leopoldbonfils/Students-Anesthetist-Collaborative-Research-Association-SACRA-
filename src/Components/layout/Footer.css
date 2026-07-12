@@ -7,7 +7,7 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 2.5fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr 2.5fr;
   gap: var(--space-2xl);
   padding-bottom: var(--space-2xl);
 }
@@ -96,6 +96,22 @@
 .footer-newsletter-col {
   display: flex;
   flex-direction: column;
+}
+
+/* Contact column list items */
+.footer-contact-list li {
+  font-size: var(--fs-body-sm);
+  color: #94a3b8;
+  line-height: 1.55;
+}
+
+.footer-contact-list a {
+  color: #94a3b8;
+  transition: color var(--transition-fast);
+}
+
+.footer-contact-list a:hover {
+  color: var(--color-accent);
 }
 
 /* Footer Bottom */
