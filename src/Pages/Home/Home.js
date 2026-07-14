@@ -13,10 +13,7 @@ export const Home = () => {
       <section className="hero-section">
         <div className="container hero-container">
           <div className="hero-content">
-            <div className="hero-badge animate-slide-up">
-              <ShieldCheck size={16} />
-              <span>Promoting Safe Anesthesia & Public Health</span>
-            </div>
+
             <h1 className="hero-title animate-slide-up">
               Students Anesthetist Collaborative Research Association
             </h1>

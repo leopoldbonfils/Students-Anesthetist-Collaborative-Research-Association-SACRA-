@@ -56,7 +56,6 @@ export const Research = () => {
       <section className="research-hero-section">
         <div className="container research-hero-container">
           <div className="research-hero-left">
-            <span className="research-hero-badge">Global Research Hub</span>
             <h1 className="research-hero-title">
               Advancing Anesthesia Through Student-Led Research
             </h1>
@@ -72,7 +71,7 @@ export const Research = () => {
               </a>
             </div>
           </div>
-          
+
           <div className="research-hero-right">
             {/* Styled vector representation of the Pi symbol in the screenshot */}
             <svg width="220" height="220" viewBox="0 0 100 100" fill="none" stroke="#12263f" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" className="pi-vector-symbol">
@@ -133,9 +132,9 @@ export const Research = () => {
             {studies.map((study) => (
               <Card key={study.id} className="study-card" hoverEffect={true}>
                 <div className="study-card-header">
-                  <Badge 
-                    text={study.status} 
-                    type={study.status === 'Active' ? 'success' : study.status === 'Recruiting' ? 'info' : 'neutral'} 
+                  <Badge
+                    text={study.status}
+                    type={study.status === 'Active' ? 'success' : study.status === 'Recruiting' ? 'info' : 'neutral'}
                   />
                   <span className="study-progress-pct">{study.progress}% Complete</span>
                 </div>

@@ -35,7 +35,7 @@ export const Membership = () => {
       {/* Soft Blue Hero Section (Aligned with Mockup) */}
       <section className="membership-hero-section">
         <div className="container membership-hero-container">
-          <span className="membership-hero-badge">Advancing Anesthesiology</span>
+
           <h1 className="membership-hero-title">Join a Community of Future Anesthetists</h1>
           <p className="membership-hero-subtitle">
             Empowering the next generation of medical researchers and clinicians through collaborative innovation, mentorship, and clinical excellence.
