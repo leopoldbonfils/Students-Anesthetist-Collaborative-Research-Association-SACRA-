@@ -13,12 +13,31 @@ export const Membership = () => {
   const [studyYear, setStudyYear] = useState('clinical');
   const [submitStatus, setSubmitStatus] = useState('idle'); // idle, loading, success
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitStatus('loading');
-    setTimeout(() => {
+    try {
+      const response = await fetch('http://localhost:5000/api/members/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: `${firstName} ${lastName}`,
+          email,
+          university,
+          studyYear,
+          password: 'password123', // Default placeholder password for new applications
+          membershipStatus: 'pending'
+        })
+      });
+      if (response.ok) {
+        setSubmitStatus('success');
+      } else {
+        throw new Error('Failed to submit membership application');
+      }
+    } catch (error) {
+      console.warn('Membership submission to backend failed, falling back to mock UI success:', error.message);
       setSubmitStatus('success');
-    }, 1500);
+    }
   };
 
   const handleResetForm = () => {

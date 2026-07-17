@@ -41,10 +41,14 @@ export const Blog = () => {
         <section className="container section-padding">
           <SectionTitle title="Featured Story" subtitle="Our most recent research breakthrough from the fellowship." />
           <Card className="featured-blog-card" hoverEffect={true}>
-            <div className="featured-blog-visual">
-              <div className="abstract-news-graphic">
-                <Clock size={48} className="news-icon-deco" />
-              </div>
+            <div className="featured-blog-visual" style={{ position: 'relative', overflow: 'hidden' }}>
+              {featuredPost.thumb ? (
+                <img src={featuredPost.thumb} alt={featuredPost.title} style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }} />
+              ) : (
+                <div className="abstract-news-graphic">
+                  <Clock size={48} className="news-icon-deco" />
+                </div>
+              )}
             </div>
             <div className="featured-blog-content">
               <Badge text={featuredPost.category} type="primary" className="blog-cat-badge" />
@@ -75,8 +79,11 @@ export const Blog = () => {
             <div className="blog-grid">
               {regularPosts.map((post) => (
                 <Card key={post.id} className="blog-grid-card" hoverEffect={true}>
-                  <div className="blog-grid-visual-placeholder">
-                    <span className="placeholder-cat">{post.category}</span>
+                  <div className="blog-grid-visual-placeholder" style={{ position: 'relative', overflow: 'hidden' }}>
+                    {post.thumb ? (
+                      <img src={post.thumb} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }} />
+                    ) : null}
+                    <span className="placeholder-cat" style={{ zIndex: 1 }}>{post.category}</span>
                   </div>
                   <div className="blog-card-body">
                     <Badge text={post.category} type="info" className="blog-card-cat" />
