@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PageHeader } from '../../components/common/PageHeader';
-import { Card } from '../../components/ui/Card';
-import { Modal } from '../../components/ui/Modal';
-import { Badge } from '../../components/ui/Badge';
-import { ZoomIn, Calendar } from 'lucide-react';
+import { ZoomIn, Calendar, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { createPortal } from 'react-dom';
 import './Gallery.css';
 
 const MOCK_PHOTOS = [
@@ -57,9 +55,11 @@ const MOCK_PHOTOS = [
   }
 ];
 
+const ASPECT_RATIOS = ['16-9', '4-3', '1-1', '3-2'];
+
 export const Gallery = () => {
   const [filter, setFilter] = useState('All');
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
   const [photos, setPhotos] = useState(MOCK_PHOTOS);
 
   useEffect(() => {
@@ -92,6 +92,35 @@ export const Gallery = () => {
     ? photos 
     : photos.filter(p => p.category === filter);
 
+  const handlePrev = () => {
+    setLightboxIndex((prev) => (prev > 0 ? prev - 1 : filteredPhotos.length - 1));
+  };
+
+  const handleNext = () => {
+    setLightboxIndex((prev) => (prev < filteredPhotos.length - 1 ? prev + 1 : 0));
+  };
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    
+    // Prevent scrolling behind lightbox
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowLeft') handlePrev();
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'Escape') setLightboxIndex(null);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
+  }, [lightboxIndex, filteredPhotos]);
+
+  const activePhoto = lightboxIndex !== null ? filteredPhotos[lightboxIndex] : null;
+
   return (
     <div className="gallery-page animate-fade-in">
       <PageHeader
@@ -106,7 +135,10 @@ export const Gallery = () => {
             <button
               key={cat}
               className={`filter-pill ${filter === cat ? 'filter-pill-active' : ''}`}
-              onClick={() => setFilter(cat)}
+              onClick={() => {
+                setFilter(cat);
+                setLightboxIndex(null); // Close lightbox if changing filter
+              }}
               role="tab"
               aria-selected={filter === cat}
             >
@@ -117,57 +149,95 @@ export const Gallery = () => {
 
         {/* Photo Grid */}
         <div className="gallery-grid">
-          {filteredPhotos.map((photo) => (
-            <Card
+          {filteredPhotos.map((photo, index) => (
+            <div
               key={photo.id}
-              className="gallery-card animate-scale-in"
-              clickable={true}
-              onClick={() => setSelectedPhoto(photo)}
-              hoverEffect={true}
+              className="gallery-item animate-scale-in"
+              onClick={() => setLightboxIndex(index)}
             >
-              <div className={`gallery-visual-placeholder ${photo.colorClass}`} style={{ position: 'relative', overflow: 'hidden' }}>
+              <div className="gallery-image-container">
                 {photo.url ? (
-                  <img src={photo.url} alt={photo.title} style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }} />
-                ) : null}
-                <ZoomIn className="zoom-icon" size={32} style={{ zIndex: 1 }} />
-                <span className="visual-category" style={{ zIndex: 1 }}>{photo.category}</span>
+                  <img src={photo.url} alt={photo.title} className="gallery-image" />
+                ) : (
+                  <div className={`gallery-placeholder ${photo.colorClass}`} />
+                )}
               </div>
-              <div className="gallery-card-content">
-                <h4 className="gallery-photo-title">{photo.title}</h4>
-                <div className="gallery-photo-meta">
-                  <span><Calendar size={12} /> {photo.date}</span>
-                </div>
-              </div>
-            </Card>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* Lightbox Zoom Modal */}
-      <Modal
-        isOpen={!!selectedPhoto}
-        onClose={() => setSelectedPhoto(null)}
-        title={selectedPhoto?.title}
-      >
-        {selectedPhoto && (
-          <div className="lightbox-content animate-scale-in">
-            <div className={`lightbox-visual ${selectedPhoto.colorClass}`} style={{ position: 'relative', overflow: 'hidden', minHeight: 250 }}>
-              {selectedPhoto.url ? (
-                <img src={selectedPhoto.url} alt={selectedPhoto.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+      {/* Lightbox Zoom Portal */}
+      {activePhoto && createPortal(
+        <div 
+          className="custom-lightbox animate-fade-in" 
+          role="dialog" 
+          aria-modal="true"
+          onClick={() => setLightboxIndex(null)}
+          tabIndex={-1}
+        >
+          {/* Close button */}
+          <button 
+            className="lightbox-close-btn" 
+            onClick={() => setLightboxIndex(null)} 
+            aria-label="Close full screen view"
+          >
+            <X size={24} />
+          </button>
+
+          {/* Navigation Arrows */}
+          {filteredPhotos.length > 1 && (
+            <>
+              <button 
+                className="lightbox-nav-btn prev" 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handlePrev();
+                }}
+                aria-label="Previous photo"
+              >
+                <ChevronLeft size={36} />
+              </button>
+              <button 
+                className="lightbox-nav-btn next" 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleNext();
+                }}
+                aria-label="Next photo"
+              >
+                <ChevronRight size={36} />
+              </button>
+            </>
+          )}
+
+          {/* Main Content Area */}
+          <div className="lightbox-main animate-scale-in" onClick={(e) => e.stopPropagation()}>
+            <div className="lightbox-image-wrapper">
+              {activePhoto.url ? (
+                <img src={activePhoto.url} alt={activePhoto.title} className="lightbox-image" />
               ) : (
-                <ZoomIn size={48} className="lightbox-visual-icon" />
+                <div className={`gallery-placeholder ${activePhoto.colorClass} aspect-3-2`} style={{ width: '80vw', maxWidth: '600px', height: '400px' }}>
+                  <ZoomIn size={64} style={{ opacity: 0.3, color: 'white' }} />
+                </div>
               )}
             </div>
-            <div className="lightbox-details">
-              <div className="lightbox-meta">
-                <Badge text={selectedPhoto.category} type="primary" />
-                <span className="lightbox-date"><Calendar size={14} /> {selectedPhoto.date}</span>
+
+            {/* Captions & Info */}
+            <div className="lightbox-caption-panel">
+              <div className="lightbox-caption-header">
+                <h3 className="lightbox-caption-title">{activePhoto.title}</h3>
+                <div className="lightbox-caption-meta">
+                  <span className="gallery-item-category-badge">{activePhoto.category}</span>
+                  <span><Calendar size={14} style={{ verticalAlign: 'middle', marginRight: '4px' }} /> {activePhoto.date}</span>
+                </div>
               </div>
-              <p className="lightbox-desc">{selectedPhoto.desc}</p>
+              <p className="lightbox-caption-desc">{activePhoto.desc}</p>
             </div>
           </div>
-        )}
-      </Modal>
+        </div>,
+        document.body
+      )}
     </div>
   );
 };
