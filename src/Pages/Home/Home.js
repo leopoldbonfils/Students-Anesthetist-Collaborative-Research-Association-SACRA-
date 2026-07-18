@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, ArrowRight, FlaskConical, GraduationCap, Users, Heart, Building2 } from 'lucide-react';
+import { ShieldCheck, ArrowRight, FlaskConical, GraduationCap, Users, Heart, Building2, HeartPulse } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { Card } from '../../components/ui/Card';
 import simLabImg from '../../assets/images/sim-lab.png';
@@ -119,22 +119,37 @@ export const Home = () => {
       {/* Stats Counters Section */}
       <section className="stats-section">
         <div className="container stats-grid">
-          <div className="stat-item">
-            <h4 className="stat-number">500+</h4>
-            <p className="stat-label">Active Members</p>
-          </div>
-          <div className="stat-item">
-            <h4 className="stat-number">24+</h4>
-            <p className="stat-label">Clinical Research Studies</p>
-          </div>
-          <div className="stat-item">
-            <h4 className="stat-number">12</h4>
-            <p className="stat-label">International Chapters</p>
-          </div>
-          <div className="stat-item">
-            <h4 className="stat-number">40+</h4>
-            <p className="stat-label">Published Articles</p>
-          </div>
+          <Card className="stat-card" hoverEffect={true}>
+            <div className="stat-icon-badge">
+              <GraduationCap size={24} />
+            </div>
+            <h4 className="stat-card-number">200</h4>
+            <p className="stat-card-label">Members</p>
+          </Card>
+
+          <Card className="stat-card" hoverEffect={true}>
+            <div className="stat-icon-badge">
+              <Building2 size={24} />
+            </div>
+            <h4 className="stat-card-number">3</h4>
+            <p className="stat-card-label">Campuses</p>
+          </Card>
+
+          <Card className="stat-card" hoverEffect={true}>
+            <div className="stat-icon-badge">
+              <FlaskConical size={24} />
+            </div>
+            <h4 className="stat-card-number">15</h4>
+            <p className="stat-card-label">Research Projects</p>
+          </Card>
+
+          <Card className="stat-card" hoverEffect={true}>
+            <div className="stat-icon-badge">
+              <HeartPulse size={24} />
+            </div>
+            <h4 className="stat-card-number">50</h4>
+            <p className="stat-card-label">Community Events</p>
+          </Card>
         </div>
       </section>
 
