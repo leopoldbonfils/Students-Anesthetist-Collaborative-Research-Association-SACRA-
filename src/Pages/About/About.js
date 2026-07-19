@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from '../../components/ui/Card';
 import { SectionTitle } from '../../components/common/SectionTitle';
-import { Shield, Users, Lightbulb, Flag, Eye, Mail } from 'lucide-react';
+import { Shield, Users, Lightbulb, Flag, Eye, Heart } from 'lucide-react';
 import simLabImg from '../../assets/images/sim-lab.png';
 import './About.css';
 
@@ -44,28 +44,28 @@ export const About = () => {
 
   const team = [
     {
-      name: 'Dr. Sarah Jenkins',
-      role: 'Founding Faculty Advisor',
-      desc: 'Attending Anesthesiologist with over 15 years of academic instruction and clinical research experience.',
-      initials: 'SJ'
+      name: 'Olivier Twubahimana',
+      role: 'Founder',
+      desc: 'Leading the association with vision and integrity, ensuring all goals are met.',
+      initials: 'OT',
+      socials: {
+        x: '#x',
+        facebook: '#facebook',
+        instagram: '#instagram',
+        linkedin: '#linkedin'
+      }
     },
     {
-      name: 'Elena Rostova',
-      role: 'President & Research Chair',
-      desc: 'Medical Student Researcher specializing in neural network models for predictive respiratory monitoring.',
-      initials: 'ER'
-    },
-    {
-      name: 'John Thompson',
-      role: 'Vice President & Outreach Director',
-      desc: 'Anesthesia Resident coordinating rural hospital safety workshops and WHO surgical checklist audits.',
-      initials: 'JT'
-    },
-    {
-      name: 'Dr. Lisa Chen',
-      role: 'Director of Clinical Education',
-      desc: 'Simulation Fellow leading hands-on ultrasound nerve block simulation tutorials and webinars.',
-      initials: 'LC'
+      name: 'Deborah Shimwa',
+      role: 'Well And Social Affairs',
+      desc: 'Supporting the President and overseeing internal operations and committees.',
+      initials: 'DS',
+      socials: {
+        x: '#x',
+        facebook: '#facebook',
+        instagram: '#instagram',
+        linkedin: '#linkedin'
+      }
     }
   ];
 
@@ -97,7 +97,7 @@ export const About = () => {
               <h3>Our Mission</h3>
             </div>
             <p>
-              To foster a collaborative environment where students in anesthesia research can develop innovative solutions, enhance clinical outcomes, and advance their professional development through mentorship and global network.
+              To promote safe anesthesia practices, foster a culture of research, and engage in impactful community outreach to improve public health outcomes.
             </p>
           </Card>
 
@@ -107,7 +107,17 @@ export const About = () => {
               <h3>Our Vision</h3>
             </div>
             <p>
-              To become the leading African student research organization in anesthesia, recognized internationally for bridging the gap between clinical practice and student innovation.
+              To be a leading student association that empowers future anesthetists to become innovators, leaders, and advocates for global health equity.
+            </p>
+          </Card>
+
+          <Card className="values-card" hoverEffect={false}>
+            <div className="mission-header-row">
+              <Heart className="mission-card-icon gold" size={28} />
+              <h3>Our Core Values</h3>
+            </div>
+            <p>
+              We are guided by the principles of Excellence, Integrity, Collaboration, and Service to Humanity.
             </p>
           </Card>
         </div>
@@ -158,7 +168,7 @@ export const About = () => {
         <div className="container">
           <SectionTitle
             title="Our Leadership"
-            subtitle="Meet the student researchers and faculty advisors directing SACRA's global board committees."
+            subtitle="Meet the founder directing SACRA's vision and clinical research activities."
           />
           <div className="team-grid">
             {team.map((member, idx) => (
@@ -170,14 +180,39 @@ export const About = () => {
                 <span className="team-member-role">{member.role}</span>
                 <p className="team-member-bio">{member.desc}</p>
                 <div className="team-member-socials">
-                  <a href="#linkedin" className="team-social-icon" aria-label="LinkedIn">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin">
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                      <rect width="4" height="12" x="2" y="9"/>
-                      <circle cx="4" cy="4" r="2"/>
-                    </svg>
-                  </a>
-                  <a href="mailto:sacra.59@yahoo.com" className="team-social-icon" aria-label="Email"><Mail size={16} /></a>
+                  {member.socials.x && (
+                    <a href={member.socials.x} target="_blank" rel="noopener noreferrer" className="team-social-icon" aria-label="X">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x">
+                        <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                        <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                      </svg>
+                    </a>
+                  )}
+                  {member.socials.facebook && (
+                    <a href={member.socials.facebook} target="_blank" rel="noopener noreferrer" className="team-social-icon" aria-label="Facebook">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-facebook">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                      </svg>
+                    </a>
+                  )}
+                  {member.socials.instagram && (
+                    <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="team-social-icon" aria-label="Instagram">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                      </svg>
+                    </a>
+                  )}
+                  {member.socials.linkedin && (
+                    <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="team-social-icon" aria-label="LinkedIn">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                        <rect width="4" height="12" x="2" y="9"/>
+                        <circle cx="4" cy="4" r="2"/>
+                      </svg>
+                    </a>
+                  )}
                 </div>
               </Card>
             ))}

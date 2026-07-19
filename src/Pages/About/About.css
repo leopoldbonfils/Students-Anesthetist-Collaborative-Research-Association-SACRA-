@@ -89,11 +89,11 @@
 /* Mission & Vision aligned with Mockup */
 .mission-vision-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-xl);
 }
 
-.mission-card, .vision-card {
+.mission-card, .vision-card, .values-card {
   padding: var(--space-xl) !important;
 }
 
@@ -116,6 +116,10 @@
   color: var(--color-accent);
 }
 
+.mission-card-icon.gold {
+  color: var(--color-warning);
+}
+
 .mission-header-row h3 {
   margin: 0;
   font-family: var(--font-heading);
@@ -123,7 +127,7 @@
   color: var(--color-primary-dark);
 }
 
-.mission-card p, .vision-card p {
+.mission-card p, .vision-card p, .values-card p {
   color: var(--color-neutral-muted);
   line-height: 1.6;
   font-size: var(--fs-body-sm);
@@ -266,8 +270,9 @@
 }
 
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: var(--space-lg);
 }
 
@@ -275,6 +280,8 @@
   text-align: center;
   align-items: center;
   padding: var(--space-lg);
+  flex: 1 1 280px;
+  max-width: 320px;
 }
 
 .team-avatar-placeholder {
@@ -335,9 +342,6 @@
 
 /* Responsive breakdowns */
 @media (max-width: 1024px) {
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .values-grid {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-lg);
@@ -387,9 +391,5 @@
 }
 
 @media (max-width: 600px) {
-  .team-grid {
-    grid-template-columns: 1fr;
-    max-width: 320px;
-    margin: 0 auto;
-  }
+  /* team-grid flexbox natively handles layout */
 }
