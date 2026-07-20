@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from '../../components/ui/Card';
 import { SectionTitle } from '../../components/common/SectionTitle';
-import { Shield, Users, Lightbulb, Flag, Eye, Heart } from 'lucide-react';
+import { Shield, Users, Lightbulb, Flag, Eye, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
 import simLabImg from '../../assets/images/sim-lab.png';
 import './About.css';
 
@@ -45,29 +45,122 @@ export const About = () => {
   const team = [
     {
       name: 'Olivier Twubahimana',
-      role: 'Founder',
+      role: 'Founder & President',
       desc: 'Leading the association with vision and integrity, ensuring all goals are met.',
       initials: 'OT',
-      socials: {
-        x: '#x',
-        facebook: '#facebook',
-        instagram: '#instagram',
-        linkedin: '#linkedin'
-      }
+      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
     },
     {
       name: 'Deborah Shimwa',
-      role: 'Well And Social Affairs',
+      role: 'Well and Social Affairs',
       desc: 'Supporting the President and overseeing internal operations and committees.',
       initials: 'DS',
-      socials: {
-        x: '#x',
-        facebook: '#facebook',
-        instagram: '#instagram',
-        linkedin: '#linkedin'
-      }
+      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+    },
+    {
+      name: 'Jean-Claude Niyonisaba',
+      role: 'Vice President & Co-Founder',
+      desc: 'Driving strategic initiatives, collaborative research partnerships, and clinical audits.',
+      initials: 'JN',
+      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+    },
+    {
+      name: 'Marie-Claire Uwineza',
+      role: 'Secretary General',
+      desc: 'Managing board communications, institutional relationships, and member documentation.',
+      initials: 'MU',
+      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+    },
+    {
+      name: 'Emmanuel Habyarimana',
+      role: 'Director of Research',
+      desc: 'Overseeing multicenter audits, database management, and academic abstract submissions.',
+      initials: 'EH',
+      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+    },
+    {
+      name: 'Grace Gakire',
+      role: 'Treasurer & Finance Chair',
+      desc: 'Managing research grants, conference travel funds, and annual budgets.',
+      initials: 'GG',
+      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+    },
+    {
+      name: 'Eric Ndahimana',
+      role: 'Director of Education',
+      desc: 'Coordinating weekly case discussions, airway simulation labs, and guest webinars.',
+      initials: 'EN',
+      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+    },
+    {
+      name: 'Divine Mutesi',
+      role: 'Public Relations Officer',
+      desc: 'Directing community outreach, hospital health advocacy, and media relations.',
+      initials: 'DM',
+      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+    },
+    {
+      name: 'Patrick Habimana',
+      role: 'IT & Digital Infrastructure Lead',
+      desc: 'Maintaining the SACRA research portal, databases, and digital communication tools.',
+      initials: 'PH',
+      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+    },
+    {
+      name: 'Aline Uwera',
+      role: 'Clinical Audit Coordinator',
+      desc: 'Supervising hospital safety check-list compliance audits and data entry.',
+      initials: 'AU',
+      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+    },
+    {
+      name: 'Dr. Sarah Jenkins',
+      role: 'Founding Faculty Advisor',
+      desc: 'Attending Anesthesiologist advising on research methodology and clinical safety.',
+      initials: 'SJ',
+      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
     }
   ];
+
+  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [isHovered, setIsHovered] = React.useState(false);
+  const [touchStart, setTouchStart] = React.useState(0);
+  const [touchEnd, setTouchEnd] = React.useState(0);
+
+  const nextSlide = React.useCallback(() => {
+    setActiveIndex((prev) => (prev + 1) % team.length);
+  }, [team.length]);
+
+  const prevSlide = React.useCallback(() => {
+    setActiveIndex((prev) => (prev - 1 + team.length) % team.length);
+  }, [team.length]);
+
+  React.useEffect(() => {
+    if (isHovered) return;
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [isHovered, nextSlide]);
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 75) {
+      nextSlide();
+    }
+    if (touchStart - touchEnd < -75) {
+      prevSlide();
+    }
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
 
   return (
     <div className="about-page animate-fade-in">
@@ -170,52 +263,83 @@ export const About = () => {
             title="Our Leadership"
             subtitle="Meet the founder directing SACRA's vision and clinical research activities."
           />
-          <div className="team-grid">
-            {team.map((member, idx) => (
-              <Card key={idx} className="team-card" hoverEffect={true}>
-                <div className="team-avatar-placeholder">
-                  <span>{member.initials}</span>
-                </div>
-                <h4 className="team-member-name">{member.name}</h4>
-                <span className="team-member-role">{member.role}</span>
-                <p className="team-member-bio">{member.desc}</p>
-                <div className="team-member-socials">
-                  {member.socials.x && (
-                    <a href={member.socials.x} target="_blank" rel="noopener noreferrer" className="team-social-icon" aria-label="X">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x">
-                        <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
-                        <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
-                      </svg>
-                    </a>
-                  )}
-                  {member.socials.facebook && (
-                    <a href={member.socials.facebook} target="_blank" rel="noopener noreferrer" className="team-social-icon" aria-label="Facebook">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-facebook">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                      </svg>
-                    </a>
-                  )}
-                  {member.socials.instagram && (
-                    <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="team-social-icon" aria-label="Instagram">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram">
-                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                      </svg>
-                    </a>
-                  )}
-                  {member.socials.linkedin && (
-                    <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="team-social-icon" aria-label="LinkedIn">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                        <rect width="4" height="12" x="2" y="9"/>
-                        <circle cx="4" cy="4" r="2"/>
-                      </svg>
-                    </a>
-                  )}
-                </div>
-              </Card>
-            ))}
+          <div className="swiper-container"
+               onMouseEnter={() => setIsHovered(true)}
+               onMouseLeave={() => setIsHovered(false)}
+               onTouchStart={handleTouchStart}
+               onTouchMove={handleTouchMove}
+               onTouchEnd={handleTouchEnd}>
+            <button className="swiper-nav-btn prev" onClick={prevSlide} aria-label="Previous Leader">
+              <ChevronLeft size={24} />
+            </button>
+
+            <div className="swiper-wrapper">
+              {team.map((member, idx) => {
+                const isActive = idx === activeIndex;
+                return (
+                  <div key={idx} className={`swiper-slide ${isActive ? 'active' : ''}`}>
+                    <Card className="team-card" hoverEffect={true}>
+                      <div className="team-avatar-placeholder">
+                        <span>{member.initials}</span>
+                      </div>
+                      <h4 className="team-member-name">{member.name}</h4>
+                      <span className="team-member-role">{member.role}</span>
+                      <p className="team-member-bio">{member.desc}</p>
+                      <div className="team-member-socials">
+                        {member.socials.x && (
+                          <a href={member.socials.x} target="_blank" rel="noopener noreferrer" className="team-social-icon" aria-label="X">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x">
+                              <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                              <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                            </svg>
+                          </a>
+                        )}
+                        {member.socials.facebook && (
+                          <a href={member.socials.facebook} target="_blank" rel="noopener noreferrer" className="team-social-icon" aria-label="Facebook">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-facebook">
+                              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                          </a>
+                        )}
+                        {member.socials.instagram && (
+                          <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="team-social-icon" aria-label="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram">
+                              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                          </a>
+                        )}
+                        {member.socials.linkedin && (
+                          <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="team-social-icon" aria-label="LinkedIn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin">
+                              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                              <rect width="4" height="12" x="2" y="9"/>
+                              <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                          </a>
+                        )}
+                      </div>
+                    </Card>
+                  </div>
+                );
+              })}
+            </div>
+
+            <button className="swiper-nav-btn next" onClick={nextSlide} aria-label="Next Leader">
+              <ChevronRight size={24} />
+            </button>
+
+            <div className="swiper-pagination">
+              {team.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`swiper-dot ${idx === activeIndex ? 'active' : ''}`}
+                  onClick={() => setActiveIndex(idx)}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
