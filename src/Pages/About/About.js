@@ -48,77 +48,143 @@ export const About = () => {
       role: 'Founder & President',
       desc: 'Leading the association with vision and integrity, ensuring all goals are met.',
       initials: 'OT',
-      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+      image: null, // Replace null with imported image, e.g.: import olivierImg from '../../assets/images/olivier.jpg'
+      socials: {
+        x: 'https://x.com/SACRA_Anesthesia',
+        facebook: 'https://facebook.com/SACRAResearch',
+        instagram: 'https://instagram.com/sacra_research',
+        linkedin: 'https://linkedin.com/in/olivier-twubahimana'
+      }
     },
     {
       name: 'Deborah Shimwa',
       role: 'Well and Social Affairs',
       desc: 'Supporting the President and overseeing internal operations and committees.',
       initials: 'DS',
-      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+      image: null,
+      socials: {
+        x: 'https://x.com/SACRA_Anesthesia',
+        facebook: 'https://facebook.com/SACRAResearch',
+        instagram: 'https://instagram.com/sacra_research',
+        linkedin: 'https://linkedin.com/company/sacra-research'
+      }
     },
     {
       name: 'Jean-Claude Niyonisaba',
       role: 'Vice President & Co-Founder',
       desc: 'Driving strategic initiatives, collaborative research partnerships, and clinical audits.',
       initials: 'JN',
-      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+      image: null,
+      socials: {
+        x: 'https://x.com/SACRA_Anesthesia',
+        facebook: 'https://facebook.com/SACRAResearch',
+        instagram: 'https://instagram.com/sacra_research',
+        linkedin: 'https://linkedin.com/company/sacra-research'
+      }
     },
     {
       name: 'Marie-Claire Uwineza',
       role: 'Secretary General',
       desc: 'Managing board communications, institutional relationships, and member documentation.',
       initials: 'MU',
-      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+      image: null,
+      socials: {
+        x: 'https://x.com/SACRA_Anesthesia',
+        facebook: 'https://facebook.com/SACRAResearch',
+        instagram: 'https://instagram.com/sacra_research',
+        linkedin: 'https://linkedin.com/company/sacra-research'
+      }
     },
     {
-      name: 'Emmanuel Habyarimana',
+      name: 'MBABAZI CLEMANTINE',
       role: 'Director of Research',
       desc: 'Overseeing multicenter audits, database management, and academic abstract submissions.',
       initials: 'EH',
-      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+      image: null,
+      socials: {
+        x: 'https://x.com/SACRA_Anesthesia',
+        facebook: 'https://facebook.com/SACRAResearch',
+        instagram: 'https://instagram.com/sacra_research',
+        linkedin: 'https://linkedin.com/company/sacra-research'
+      }
     },
     {
       name: 'Grace Gakire',
       role: 'Treasurer & Finance Chair',
       desc: 'Managing research grants, conference travel funds, and annual budgets.',
       initials: 'GG',
-      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+      image: null,
+      socials: {
+        x: 'https://x.com/SACRA_Anesthesia',
+        facebook: 'https://facebook.com/SACRAResearch',
+        instagram: 'https://instagram.com/sacra_research',
+        linkedin: 'https://linkedin.com/company/sacra-research'
+      }
     },
     {
       name: 'Eric Ndahimana',
       role: 'Director of Education',
       desc: 'Coordinating weekly case discussions, airway simulation labs, and guest webinars.',
       initials: 'EN',
-      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+      image: null,
+      socials: {
+        x: 'https://x.com/SACRA_Anesthesia',
+        facebook: 'https://facebook.com/SACRAResearch',
+        instagram: 'https://instagram.com/sacra_research',
+        linkedin: 'https://linkedin.com/company/sacra-research'
+      }
     },
     {
       name: 'Divine Mutesi',
       role: 'Public Relations Officer',
       desc: 'Directing community outreach, hospital health advocacy, and media relations.',
       initials: 'DM',
-      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+      image: null,
+      socials: {
+        x: 'https://x.com/SACRA_Anesthesia',
+        facebook: 'https://facebook.com/SACRAResearch',
+        instagram: 'https://instagram.com/sacra_research',
+        linkedin: 'https://linkedin.com/company/sacra-research'
+      }
     },
     {
       name: 'Patrick Habimana',
       role: 'IT & Digital Infrastructure Lead',
       desc: 'Maintaining the SACRA research portal, databases, and digital communication tools.',
       initials: 'PH',
-      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+      image: null,
+      socials: {
+        x: 'https://x.com/SACRA_Anesthesia',
+        facebook: 'https://facebook.com/SACRAResearch',
+        instagram: 'https://instagram.com/sacra_research',
+        linkedin: 'https://linkedin.com/company/sacra-research'
+      }
     },
     {
       name: 'Aline Uwera',
       role: 'Clinical Audit Coordinator',
       desc: 'Supervising hospital safety check-list compliance audits and data entry.',
       initials: 'AU',
-      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+      image: null,
+      socials: {
+        x: 'https://x.com/SACRA_Anesthesia',
+        facebook: 'https://facebook.com/SACRAResearch',
+        instagram: 'https://instagram.com/sacra_research',
+        linkedin: 'https://linkedin.com/company/sacra-research'
+      }
     },
     {
       name: 'Dr. Sarah Jenkins',
       role: 'Founding Faculty Advisor',
       desc: 'Attending Anesthesiologist advising on research methodology and clinical safety.',
       initials: 'SJ',
-      socials: { x: '#x', facebook: '#facebook', instagram: '#instagram', linkedin: '#linkedin' }
+      image: null,
+      socials: {
+        x: 'https://x.com/SACRA_Anesthesia',
+        facebook: 'https://facebook.com/SACRAResearch',
+        instagram: 'https://instagram.com/sacra_research',
+        linkedin: 'https://linkedin.com/company/sacra-research'
+      }
     }
   ];
 
@@ -264,11 +330,11 @@ export const About = () => {
             subtitle="Meet the founder directing SACRA's vision and clinical research activities."
           />
           <div className="swiper-container"
-               onMouseEnter={() => setIsHovered(true)}
-               onMouseLeave={() => setIsHovered(false)}
-               onTouchStart={handleTouchStart}
-               onTouchMove={handleTouchMove}
-               onTouchEnd={handleTouchEnd}>
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}>
             <button className="swiper-nav-btn prev" onClick={prevSlide} aria-label="Previous Leader">
               <ChevronLeft size={24} />
             </button>
@@ -280,7 +346,15 @@ export const About = () => {
                   <div key={idx} className={`swiper-slide ${isActive ? 'active' : ''}`}>
                     <Card className="team-card" hoverEffect={true}>
                       <div className="team-avatar-placeholder">
-                        <span>{member.initials}</span>
+                        {member.image ? (
+                          <img
+                            src={member.image}
+                            alt={member.name}
+                            className="team-avatar-img"
+                          />
+                        ) : (
+                          <span>{member.initials}</span>
+                        )}
                       </div>
                       <h4 className="team-member-name">{member.name}</h4>
                       <span className="team-member-role">{member.role}</span>
@@ -313,9 +387,9 @@ export const About = () => {
                         {member.socials.linkedin && (
                           <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="team-social-icon" aria-label="LinkedIn">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin">
-                              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                              <rect width="4" height="12" x="2" y="9"/>
-                              <circle cx="4" cy="4" r="2"/>
+                              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                              <rect width="4" height="12" x="2" y="9" />
+                              <circle cx="4" cy="4" r="2" />
                             </svg>
                           </a>
                         )}

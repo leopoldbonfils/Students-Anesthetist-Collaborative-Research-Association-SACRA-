@@ -298,6 +298,16 @@
   font-weight: 700;
   margin-bottom: var(--space-base);
   font-family: var(--font-heading);
+  overflow: hidden;
+}
+
+.team-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-full);
+  display: block;
 }
 
 .team-member-name {
