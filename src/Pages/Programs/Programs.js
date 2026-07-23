@@ -12,56 +12,56 @@ export const Programs = () => {
   const programs = [
     {
       icon: <Award size={28} />,
-      title: 'Anesthesia Research Fellowship',
-      description: 'A 12-month program offering structured mentorship, statistical advisory support, and peer review prep for student-led audits.',
-      badge: 'Academic'
+      title: 'Community Health Campaigns',
+      description: 'Conducting health campaigns addressing NCDs, sexual health, emergency response, hygiene, and anesthesia-related awareness to promote public health across Rwandan communities.',
+      badge: 'Outreach'
     },
     {
       icon: <Compass size={28} />,
-      title: 'Crisis Resource Simulation Lab',
-      description: 'Hands-on training scenarios focusing on anesthesia emergencies, airway obstruction protocols, and surgical checklists.',
+      title: 'Workshops & Skill-Building',
+      description: 'Organizing workshops, trainings, and peer-to-peer skill-building sessions to empower anesthesia students as clinicians, community leaders, and agents of change.',
       badge: 'Practical'
     },
     {
       icon: <Shield size={28} />,
-      title: 'Clinical Audit Mentorship',
-      description: 'Direct collaboration with attending anesthesiologists to register, execute, and analyze perioperative safety checks.',
-      badge: 'Clinical'
+      title: 'Anesthesia Research Projects',
+      description: 'Publishing evidence-based educational materials and collaborative research projects that strengthen research skills and evidence-based practice among anesthesia students.',
+      badge: 'Academic'
     },
     {
       icon: <HeartHandshake size={28} />,
-      title: 'Public Health Campaign Grant',
-      description: 'Funding student groups to carry surgical safety workshops and outreach checkups into rural clinics and hospitals.',
-      badge: 'Outreach'
+      title: 'Leadership Development',
+      description: 'Promoting leadership, teamwork, and community service through structured programs that develop future anesthesia leaders and create a national platform for students in Rwanda.',
+      badge: 'Leadership'
     }
   ];
 
   const tabContents = {
     eligibility: {
-      title: 'Who Can Apply?',
+      title: 'Who Can Participate?',
       items: [
-        'Undergraduate medical students in their clinical clerkships.',
-        'Anesthesia residents or clinical fellows in training.',
-        'Student anesthetist groups or hospital research committees.',
-        'Active SACRA student members in good standing.'
+        'Being an Anesthesia student at Kibogora Polytechnic or any affiliated institution.',
+        'Willingness and passion for volunteering and community service.',
+        'Agreeing to follow the rules and regulations of the association.',
+        'Active SACRA members who have completed membership registration.'
       ]
     },
     benefits: {
-      title: 'Fellowship & Program Benefits',
+      title: 'Program Benefits',
       items: [
-        'Direct co-authorship on peer-reviewed clinical audit publications.',
-        'Complimentary entry to the SACRA Annual Research Symposium.',
-        'A dedicated statistical advisor to audit sample size and analyses.',
-        'Certificate of clinical simulation and research completion.'
+        'Participation in community health campaigns (NCDs, hygiene, emergency response).',
+        'Access to peer-to-peer workshops and skill-building sessions.',
+        'Engagement in evidence-based research and educational publications.',
+        'Leadership development and community service recognition.'
       ]
     },
     timeline: {
-      title: 'Selection Process Stages',
+      title: 'How to Get Involved',
       items: [
-        'Stage 1: Submit online intake application and abstract concept.',
-        'Stage 2: Peer review check by SACRA Committee Chairs.',
-        'Stage 3: Video interview with clinical advisory board panels.',
-        'Stage 4: Program matching and advisor onboarding.'
+        'Step 1: Complete the SACRA membership registration form.',
+        'Step 2: Attend the orientation session and General Assembly.',
+        'Step 3: Join a program committee aligned with your interests.',
+        'Step 4: Participate in planned activities and contribute to SACRA\'s mission.'
       ]
     }
   };
@@ -70,14 +70,14 @@ export const Programs = () => {
     <div className="programs-page animate-fade-in">
       <PageHeader
         title="Our Programs & Services"
-        description="Fostering academic growth through intensive simulation, research grants, and expert clinical mentorship."
+        description="Empowering anesthesia students through health campaigns, workshops, research projects, and community outreach at Kibogora Polytechnic, Rusizi Campus."
       />
 
       {/* Programs List Section */}
       <section className="container section-padding">
         <SectionTitle
-          title="Fostering Academic Excellence"
-          subtitle="Explore the programs designed to support student anesthesia researchers from concept to peer publication."
+          title="SACRA's Core Programs"
+          subtitle="Programs designed to promote public health, build research skills, and empower anesthesia students across Rwanda."
         />
         <div className="programs-grid">
           {programs.map((prog, idx) => (
@@ -95,8 +95,8 @@ export const Programs = () => {
       <section className="tabs-section">
         <div className="container">
           <SectionTitle
-            title="Program Application Guide"
-            subtitle="Understand the admission rules, benefits, and chronological stages of our fellowship programs."
+            title="Getting Involved"
+            subtitle="Understand how to participate, the benefits you'll gain, and the steps to join SACRA's programs."
           />
           <div className="tabs-container">
             {/* Tab Links */}
@@ -150,8 +150,8 @@ export const Programs = () => {
       <section className="container section-padding programs-cta-section">
         <Card className="programs-cta-card" hoverEffect={false}>
           <div className="cta-content">
-            <h2>Ready to Host a Workshop?</h2>
-            <p>If you are a student group or clinical lead looking to co-organize a simulation workshop, contact our team to acquire resources, syllabus guidelines, and funding grants.</p>
+            <h2>Ready to Collaborate?</h2>
+            <p>Are you a health institution, hospital, NGO, or academic partner interested in collaborating with SACRA? Get in touch to co-organize health campaigns, workshops, or research initiatives aligned with Rwanda's public health needs.</p>
           </div>
           <Button to="/contact" variant="secondary">Partner With Us</Button>
         </Card>

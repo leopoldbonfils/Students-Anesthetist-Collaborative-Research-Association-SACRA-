@@ -18,7 +18,7 @@ export const Home = () => {
               Students Anesthetist Collaborative Research Association
             </h1>
             <p className="hero-subtitle animate-slide-up">
-              Advancing the science and practice of anesthesia through student-led innovation, clinical excellence, and collaborative international research.
+              Promoting public health awareness, evidence-based education, and community outreach — empowering anesthesia students at Kibogora Polytechnic, Rusizi Campus to become skilled clinicians, researchers, and community leaders across Rwanda.
             </p>
             <div className="hero-actions animate-slide-up">
               <Button to="/membership" variant="primary">Join SACRA</Button>
@@ -38,7 +38,7 @@ export const Home = () => {
               </div>
               <div className="metric-info">
                 <h5>Community</h5>
-                <p>Connecting 500+ students globally.</p>
+                <p>Uniting anesthesia students under a shared vision.</p>
               </div>
             </Card>
 
@@ -47,8 +47,8 @@ export const Home = () => {
                 <FlaskConical size={18} />
               </div>
               <div className="metric-info">
-                <h5>Research Projects</h5>
-                <p>24 Active clinical trials currently in progress.</p>
+                <h5>Active Campaigns</h5>
+                <p>Community health campaigns on NCDs, hygiene &amp; emergency response.</p>
               </div>
             </Card>
           </div>
@@ -123,32 +123,32 @@ export const Home = () => {
             <div className="stat-icon-badge">
               <GraduationCap size={24} />
             </div>
-            <h4 className="stat-card-number">200</h4>
-            <p className="stat-card-label">Members</p>
+            <h4 className="stat-card-number">Dec 10</h4>
+            <p className="stat-card-label">Founded 2024</p>
           </Card>
 
           <Card className="stat-card" hoverEffect={true}>
             <div className="stat-icon-badge">
               <Building2 size={24} />
             </div>
-            <h4 className="stat-card-number">3</h4>
-            <p className="stat-card-label">Campuses</p>
+            <h4 className="stat-card-number">1</h4>
+            <p className="stat-card-label">Campus — Kibogora Polytechnic</p>
           </Card>
 
           <Card className="stat-card" hoverEffect={true}>
             <div className="stat-icon-badge">
               <FlaskConical size={24} />
             </div>
-            <h4 className="stat-card-number">15</h4>
-            <p className="stat-card-label">Research Projects</p>
+            <h4 className="stat-card-number">5+</h4>
+            <p className="stat-card-label">Health Campaigns</p>
           </Card>
 
           <Card className="stat-card" hoverEffect={true}>
             <div className="stat-icon-badge">
               <HeartPulse size={24} />
             </div>
-            <h4 className="stat-card-number">50</h4>
-            <p className="stat-card-label">Community Events</p>
+            <h4 className="stat-card-number">5+</h4>
+            <p className="stat-card-label">Workshops & Skill Sessions</p>
           </Card>
         </div>
       </section>
@@ -157,12 +157,12 @@ export const Home = () => {
       <section className="summary-section container">
         <div className="summary-container">
           <div className="summary-text-block">
-            <h2 className="summary-title">Why Collaborative Research Matters</h2>
+            <h2 className="summary-title">Why Student-Led Research Matters in Rwanda</h2>
             <p className="summary-text">
-              Anesthesiology is a highly dynamic medical field where safety checklists, physiological monitoring technologies, and pharmacodynamics intersect. By connecting medical students and anesthesia residents globally, SACRA fosters collaborative audits that cut across borders.
+              In Rwanda, anesthesia students are growing across universities, yet no national association existed to support their collaboration, growth, and engagement. SACRA was founded to fill this gap — uniting students under a shared vision and bridging classroom knowledge with real-world health needs in underserved communities.
             </p>
             <p className="summary-text">
-              Our chapters share simulation protocols, compile systematic literature databases, and publish critical insights under clinical supervision, empowering young researchers to contribute directly to healthcare guidelines.
+              SACRA serves as a hub for innovation, youth-led initiatives, research engagement, and cross-disciplinary collaboration, contributing to health promotion and the visibility of Kibogora Polytechnic nationwide.
             </p>
             <div className="summary-cta-row">
               <Button to="/about" variant="primary">Discover Our Journey</Button>
@@ -184,8 +184,11 @@ export const Home = () => {
       {/* CTA Section Banner */}
       <section className="cta-banner">
         <div className="container cta-banner-container">
-          <h2 className="cta-banner-title">Ready to Advance Anesthesia Science?</h2>
-          <p className="cta-banner-text">Join SACRA today and collaborate on international clinical audits, access exclusive research funding, and attend simulation workshops.</p>
+          <h2 className="cta-banner-title">Ready to Make a Difference in Rwanda's Health?</h2>
+          <p className="cta-banner-text" style={{ fontStyle: 'italic', opacity: 0.92, maxWidth: 680, margin: '0 auto 8px' }}>
+            "SACRA is more than an association; it is a movement that empowers future anesthetists to shape the healthcare landscape of Rwanda. With support from Kibogora Polytechnic, SACRA will continue to grow as a center of excellence for research, public health, collaboration, and community service. Together, we can build a healthier, informed, and empowered Rwandan society."
+          </p>
+          <p className="cta-banner-text" style={{ opacity: 0.75, fontSize: '0.85rem' }}>— SACRA Official Document, Section 13: Conclusion</p>
           <div className="cta-banner-actions">
             <Button to="/membership" variant="secondary">Join Our Network</Button>
             <Button to="/contact" variant="outline" className="btn-light-outline">Get In Touch</Button>

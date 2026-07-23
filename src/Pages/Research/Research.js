@@ -60,7 +60,7 @@ export const Research = () => {
               Advancing Anesthesia Through Student-Led Research
             </h1>
             <p className="research-hero-subtitle">
-              SACRA empowers the next generation of clinical investigators to tackle the most pressing challenges in global anesthesia through evidence-based collaborative studies and mentorship.
+              SACRA empowers anesthesia students to engage in evidence-based research, publish educational materials, and address pressing health needs in Rwandan communities — shaping future clinicians into impactful researchers and leaders.
             </p>
             <div className="research-hero-actions">
               <a href="#active-studies" className="btn btn-primary-solid-arrow">
@@ -88,7 +88,7 @@ export const Research = () => {
         <div className="container">
           <div className="focus-section-header">
             <h2>Core Research Focus Areas</h2>
-            <p>Our collaborative efforts are strategically channeled into three pillars that define the future of anesthesia safety and efficacy.</p>
+            <p>Our research efforts focus on community health, anesthesia-related awareness, and evidence-based practice — aligned with SACRA's mission to promote public health and strengthen the anesthesia profession in Rwanda.</p>
           </div>
 
           <div className="focus-areas-grid">

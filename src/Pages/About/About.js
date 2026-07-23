@@ -9,36 +9,39 @@ export const About = () => {
   const values = [
     {
       icon: <Shield size={24} />,
-      title: 'Clinical Safety First',
-      description: 'Prioritizing evidence-based patient safety checklists and auditing standard anesthesia induction guidelines.'
+      title: 'Public Health Advocacy',
+      description: 'Conducting health campaigns addressing NCDs, sexual health, emergency response, and anesthesia-related awareness to promote public health across Rwandan communities.'
     },
     {
       icon: <Users size={24} />,
-      title: 'Global Collaboration',
-      description: 'Bridging medical schools and residents internationally to compile cross-border audits and data sets.'
+      title: 'Research & Evidence-Based Practice',
+      description: 'Inspiring a culture of research, publishing evidence-based educational materials, and strengthening research skills and evidence-based practice among anesthesia students.'
     },
     {
       icon: <Lightbulb size={24} />,
-      title: 'Student Innovation',
-      description: 'Supporting simulation prototypes, predictive neural models, and clinical research abstracts led by students.'
+      title: 'Community Empowerment',
+      description: 'Organizing workshops, skill-building sessions, and leadership programs that empower future anesthetists as community leaders, researchers, and agents of change.'
     }
   ];
 
   const milestones = [
     {
       year: '2024',
-      title: 'SACRA Association Founded',
-      description: 'Launched by a small group of student anesthetists and faculty mentors across three academic hospitals.'
+      title: 'SACRA Founded',
+      planned: false,
+      description: 'Founded on December 10, 2024, at Kibogora Polytechnic, Rusizi Campus, by visionary anesthesia students committed to uniting students under a shared vision and bridging classroom knowledge with real-world health needs.'
     },
     {
       year: '2025',
-      title: 'First International Symposium',
-      description: 'Over 200 participants from 12 medical institutions attended our first virtual anesthesia airway symposium.'
+      title: 'Community Initiatives Launched',
+      planned: true,
+      description: 'Launched community health campaigns, organized training workshops and skill-building sessions, and established key partnerships with local health institutions and hospitals across Rwanda.'
     },
     {
       year: '2026',
-      title: 'Clinical Audit Scale',
-      description: 'Reaching 24 active clinical trials, establishing student fellowship grants, and publishing our first BMC paper.'
+      title: 'Growing Nationwide',
+      planned: true,
+      description: 'Expanding research programs, publishing evidence-based educational materials, and progressing toward creating a national platform for anesthesia students in Rwanda.'
     }
   ];
 
@@ -58,7 +61,7 @@ export const About = () => {
     },
     {
       name: 'Deborah Shimwa',
-      role: 'Well and Social Affairs',
+      role: 'Social & External Affairs Officer',
       desc: 'Supporting the President and overseeing internal operations and committees.',
       initials: 'DS',
       image: null,
@@ -84,7 +87,7 @@ export const About = () => {
     },
     {
       name: 'Marie-Claire Uwineza',
-      role: 'Secretary General',
+      role: 'General Secretary',
       desc: 'Managing board communications, institutional relationships, and member documentation.',
       initials: 'MU',
       image: null,
@@ -99,7 +102,7 @@ export const About = () => {
       name: 'MBABAZI CLEMANTINE',
       role: 'Director of Research',
       desc: 'Overseeing multicenter audits, database management, and academic abstract submissions.',
-      initials: 'EH',
+      initials: 'MC',
       image: null,
       socials: {
         x: 'https://x.com/SACRA_Anesthesia',
@@ -193,6 +196,13 @@ export const About = () => {
   const [touchStart, setTouchStart] = React.useState(0);
   const [touchEnd, setTouchEnd] = React.useState(0);
 
+  React.useEffect(() => {
+    document.title = 'About SACRA | Founded Dec 10, 2024 — Kibogora Polytechnic, Rusizi Campus';
+    return () => {
+      document.title = 'SACRA | Students Anesthetist Collaborative Research Association';
+    };
+  }, []);
+
   const nextSlide = React.useCallback(() => {
     setActiveIndex((prev) => (prev + 1) % team.length);
   }, [team.length]);
@@ -235,10 +245,10 @@ export const About = () => {
         <div className="container about-hero-container">
           <span className="about-hero-badge">Student-Led Excellence</span>
           <h1 className="about-hero-title">
-            Advancing Global Anesthesia Through Student Innovation
+            Advancing Health in Rwanda Through Student-Led Research and Community Action
           </h1>
           <p className="about-hero-subtitle">
-            Based at Kibogora Polytechnic, SACRA is a vibrant community of future anesthesiologists dedicated to pioneering research, clinical excellence, and collaborative learning within Rwanda and beyond.
+            Founded on December 10, 2024, at Kibogora Polytechnic, Rusizi Campus, SACRA is a student-led initiative dedicated to promoting public health awareness, evidence-based education, research culture, and community outreach, shaping future anesthetists into skilled clinicians, community leaders, and agents of change.
           </p>
           <div className="about-hero-actions">
             <a href="#mission" className="btn btn-white-solid">Explore Our Mission</a>
@@ -256,7 +266,7 @@ export const About = () => {
               <h3>Our Mission</h3>
             </div>
             <p>
-              To promote safe anesthesia practices, foster a culture of research, and engage in impactful community outreach to improve public health outcomes.
+              To promote public health awareness, conduct community outreach programs, strengthen networking and collaboration among anesthesia students, inspire a culture of research and evidence-based practice, and raise the visibility and reputation of Kibogora Polytechnic through impactful activities and innovation.
             </p>
           </Card>
 
@@ -266,7 +276,7 @@ export const About = () => {
               <h3>Our Vision</h3>
             </div>
             <p>
-              To be a leading student association that empowers future anesthetists to become innovators, leaders, and advocates for global health equity.
+              To build a nationwide network of empowered anesthesia students who are excellent clinicians, impactful researchers, and engaged community leaders driving evidence-based health practices in Rwanda and beyond, while raising the visibility and reputation of Kibogora Polytechnic through innovative and impactful activities.
             </p>
           </Card>
 
@@ -276,7 +286,7 @@ export const About = () => {
               <h3>Our Core Values</h3>
             </div>
             <p>
-              We are guided by the principles of Excellence, Integrity, Collaboration, and Service to Humanity.
+              We are guided by the principles of Excellence, Integrity, Collaboration, and Service to Humanity — aligned with Kibogora Polytechnic's mission and the health needs of Rwandan communities.
             </p>
           </Card>
         </div>
@@ -287,7 +297,7 @@ export const About = () => {
         <div className="container">
           <SectionTitle
             title="Our Core Values"
-            subtitle="The fundamental guidelines that drive our research collaborative and clinical activities."
+            subtitle="The guiding principles that define SACRA's mission in public health, research, and community service."
           />
           <div className="values-grid">
             {values.map((val, idx) => (
@@ -305,7 +315,7 @@ export const About = () => {
       <section className="container section-padding history-section">
         <SectionTitle
           title="Our Journey"
-          subtitle="How SACRA grew from a local student group to an international anesthesia research network."
+          subtitle="SACRA's journey from founding at Kibogora Polytechnic, Rusizi Campus to a growing national initiative for anesthesia students in Rwanda."
         />
         <div className="timeline">
           <div className="timeline-line"></div>
@@ -314,6 +324,21 @@ export const About = () => {
               <div className="timeline-node"></div>
               <Card className="timeline-content" hoverEffect={true}>
                 <span className="timeline-year">{mil.year}</span>
+                {mil.planned && (
+                  <span style={{
+                    display: 'inline-block',
+                    background: 'rgba(0,168,150,0.12)',
+                    color: 'var(--color-accent-dark)',
+                    fontSize: '0.65rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.06em',
+                    textTransform: 'uppercase',
+                    padding: '2px 8px',
+                    borderRadius: '99px',
+                    border: '1px solid var(--color-accent)',
+                    marginBottom: '6px'
+                  }}>Upcoming</span>
+                )}
                 <h4 className="timeline-title">{mil.title}</h4>
                 <p className="timeline-desc">{mil.description}</p>
               </Card>
@@ -327,7 +352,7 @@ export const About = () => {
         <div className="container">
           <SectionTitle
             title="Our Leadership"
-            subtitle="Meet the founder directing SACRA's vision and clinical research activities."
+            subtitle="Meet the student leaders driving SACRA's mission at Kibogora Polytechnic, Rusizi Campus."
           />
           <div className="swiper-container"
             onMouseEnter={() => setIsHovered(true)}

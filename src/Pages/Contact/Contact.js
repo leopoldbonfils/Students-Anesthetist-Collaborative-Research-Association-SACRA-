@@ -117,7 +117,7 @@ export const Contact = () => {
         <div className="container contact-header-container">
           <h1 className="contact-header-title">Connect with Our Research Community</h1>
           <p className="contact-header-subtitle">
-            Have questions about anesthesia research or clinical collaboration? Our team at Kibogora Polytechnic is ready to assist you.
+            Have questions about membership, health campaigns, workshops, or collaboration with SACRA? Our team at Kibogora Polytechnic, Rusizi Campus is ready to assist you.
           </p>
         </div>
       </section>
@@ -228,9 +228,11 @@ export const Contact = () => {
                     className="select-field"
                   >
                     <option value="">Select a topic</option>
+                    <option value="membership">Membership Application</option>
+                    <option value="campaigns">Community Health Campaigns</option>
+                    <option value="workshop">Workshops &amp; Skill-Building</option>
                     <option value="research">Research Collaboration</option>
-                    <option value="membership">Membership Activation</option>
-                    <option value="workshop">Sim-Lab Workshops</option>
+                    <option value="partnership">Institutional Partnership</option>
                     <option value="general">General Inquiry</option>
                   </select>
                 </div>
@@ -260,13 +262,12 @@ export const Contact = () => {
         </div>
       </section>
 
-      {/* Accredited By Footer Row */}
+      {/* Institutional Support Note */}
       <footer className="accredited-footer container">
-        <span className="accredited-label">ACCREDITED BY</span>
+        <span className="accredited-label">AFFILIATED WITH</span>
         <div className="accredited-logos-row">
-          <div className="accredited-logo-box"></div>
-          <div className="accredited-logo-box"></div>
-          <div className="accredited-logo-box"></div>
+          <div className="accredited-logo-box" style={{ fontSize: 12, fontWeight: 700, color: '#334155', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Kibogora Polytechnic</div>
+          <div className="accredited-logo-box" style={{ fontSize: 11, fontWeight: 600, color: '#64748b', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Rusizi Campus, Rwanda</div>
         </div>
       </footer>
     </div>

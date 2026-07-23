@@ -57,7 +57,7 @@ export const Membership = () => {
 
           <h1 className="membership-hero-title">Join a Community of Future Anesthetists</h1>
           <p className="membership-hero-subtitle">
-            Empowering the next generation of medical researchers and clinicians through collaborative innovation, mentorship, and clinical excellence.
+            Join a growing community of anesthesia students at Kibogora Polytechnic and beyond, committed to promoting public health, conducting research, and serving Rwandan communities.
           </p>
           <div className="membership-hero-actions">
             <a href="#apply" className="btn btn-start-app">Start Application</a>
@@ -79,9 +79,9 @@ export const Membership = () => {
               <div className="why-icon-box blue-icon-box">
                 <Users size={24} />
               </div>
-              <h3>Global Mentorship Network</h3>
+              <h3>Peer Networking &amp; Mentorship</h3>
               <p>
-                Connect with leading professionals and senior anesthetists worldwide. Get guidance on career paths, research methodology, and peer review publishing pipelines.
+                Connect with fellow anesthesia students, share knowledge, and grow together. SACRA brings students under a shared vision — bridging classroom learning with real-world health challenges in Rwanda.
               </p>
             </div>
             <div className="mentorship-card-visual">
@@ -94,11 +94,34 @@ export const Membership = () => {
             <div className="why-icon-box white-icon-box">
               <FileText size={24} />
             </div>
-            <h3>Research Grants</h3>
+            <h3>Workshops &amp; Skill-Building</h3>
             <p>
-              Exclusive access to annual funding opportunities for collaborative anesthesia research projects, abstract submissions, and travel to international clinical symposiums.
+              Access training sessions, peer-to-peer skill workshops, and leadership development programs. SACRA empowers members to become community leaders, researchers, and agents of change.
             </p>
           </Card>
+        </div>
+      </section>
+
+      {/* Eligibility Requirements Section (from SACRA Constitution, Section 10) */}
+      <section className="container section-padding">
+        <div style={{ maxWidth: 680, margin: '0 auto' }}>
+          <h2 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-primary)', marginBottom: 8 }}>Eligibility &amp; Requirements</h2>
+          <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem', marginBottom: 20 }}>
+            According to SACRA's constitution (Chapter 2, Article 7), approved by members on <strong>20 May 2025</strong> during the <strong>1st General Assembly</strong>, membership is open to all students who fulfil the following criteria:
+          </p>
+          <ol style={{ paddingLeft: 20, display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {[
+              'Being an Anesthesia student',
+              'Willingness and passion for volunteering',
+              'Filling the registration form promptly',
+              'Agreeing to follow the rules and regulations of the association'
+            ].map((item, i) => (
+              <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: '0.95rem', color: 'var(--color-text)' }}>
+                <CheckCircle2 size={18} style={{ color: 'var(--color-accent)', flexShrink: 0, marginTop: 2 }} />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -106,8 +129,8 @@ export const Membership = () => {
       <section id="apply" className="container section-padding form-section">
         <div className="membership-form-container">
           <div className="section-title-centered">
-            <h2>Submit Your Membership Inquiry</h2>
-            <p>Fill out the registration details below to activate your student credentials and join the network.</p>
+            <h2>Submit Your Membership Application</h2>
+            <p>Complete the form below to apply for SACRA membership. Applications are reviewed by the Executive Board.</p>
           </div>
 
           {submitStatus === 'success' ? (
@@ -165,14 +188,14 @@ export const Membership = () => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="student-university">University / Hospital Affiliation</label>
+                  <label htmlFor="student-university">University / Institution</label>
                   <input
                     id="student-university"
                     type="text"
                     value={university}
                     onChange={(e) => setUniversity(e.target.value)}
                     required
-                    placeholder="Enter university / hospital affiliation"
+                    placeholder="e.g. Kibogora Polytechnic"
                     disabled={submitStatus === 'loading'}
                   />
                 </div>
