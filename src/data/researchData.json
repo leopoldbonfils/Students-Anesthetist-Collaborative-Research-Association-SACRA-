@@ -2,73 +2,67 @@
   "activeStudies": [
     {
       "id": "study-01",
-      "title": "Pediatric Anesthesia Induction: Non-Pharmacological Distraction Techniques",
-      "investigator": "Dr. Sarah Jenkins & Research Group A",
+      "title": "Pre-Operative Anxiety Reduction in Pediatric Patients: A Student Observation Study",
+      "investigator": "Mbabazi Clemantine & SACRA Research Group",
       "status": "Active",
-      "description": "Evaluating the efficacy of immersive VR gaming and interactive projection screens in reducing pre-operative anxiety during mask induction in children aged 4-10.",
-      "progress": 68
+      "description": "Observing and documenting non-pharmacological approaches used by clinical staff to reduce pre-operative anxiety in pediatric patients during anesthesia induction at Kibogora Hospital. This study supports SACRA's commitment to evidence-based pediatric anesthesia practice.",
+      "progress": 55
     },
     {
       "id": "study-02",
-      "title": "Post-operative Cognitive Dysfunction in Geriatric Patients: Biomarker Analysis",
-      "investigator": "Prof. Marcus Vance & Team Beta",
-      "status": "Recruiting",
-      "description": "A multicenter prospective study identifying serum S100B and inflammatory cytokines to predict early cognitive declines after orthopedic surgeries under general anesthesia.",
-      "progress": 35
+      "title": "Compliance Audit: WHO Safe Surgery Checklist in Rusizi District Health Facilities",
+      "investigator": "Aline Uwera & SACRA Clinical Audit Team",
+      "status": "Active",
+      "description": "A prospective audit assessing adherence to the WHO Safe Surgery Checklist across selected health facilities in Rusizi District, Rwanda. The study identifies gaps in pre-induction verification and documents opportunities for improvement in local anesthesia practice.",
+      "progress": 40
     },
     {
       "id": "study-03",
-      "title": "AI-Driven Patient Monitoring during Deep Sedation in Non-Operating Room Settings",
-      "investigator": "Elena Rostova, Lead Student Researcher",
-      "status": "Active",
-      "description": "Validating neural network models trained on plethysmograph waveform dynamics to predict respiratory depression 60 seconds prior to clinical onset.",
-      "progress": 82
+      "title": "Knowledge, Attitudes, and Practices of Anesthesia Students Regarding Patient Safety",
+      "investigator": "Jean-Claude Niyonisaba & SACRA Student Research Team",
+      "status": "Recruiting",
+      "description": "A cross-sectional survey study targeting anesthesia students at Kibogora Polytechnic to assess their baseline knowledge, attitudes, and self-reported practices regarding perioperative patient safety protocols.",
+      "progress": 20
     },
     {
       "id": "study-04",
-      "title": "Ultra-Low-Dose Dexmedetomidine for Post-Anesthetic Shivering in Recovery",
-      "investigator": "Dr. Kenji Tanaka & Clinical Fellows",
+      "title": "Perioperative Hypothermia Awareness Among Anesthesia Students: A Needs Assessment",
+      "investigator": "Eric Ndahimana & SACRA Education Committee",
       "status": "Completed",
-      "description": "Double-blind randomized controlled trial testing sub-clinical infusions of dexmedetomidine versus placebo for rapid relief of shivering in PACU.",
+      "description": "A needs-assessment study evaluating student awareness of perioperative hypothermia prevention strategies. Findings were used to develop a targeted educational session integrated into SACRA's simulation training program.",
       "progress": 100
     }
   ],
   "publications": [
     {
       "id": "pub-01",
-      "title": "Epidural Volume Expansion in Obstetric Patients: A Systematic Review of Combined Spinal-Epidural Techniques",
-      "authors": "L. Chen, M. Gable, S. Jenkins",
-      "journal": "International Journal of Obstetric Anesthesia",
-      "date": "2026-03-12",
-      "doi": "10.1016/j.ijoa.2026.103982",
-      "url": "https://doi.org/10.1016/j.ijoa.2026.103982"
+      "title": "Coming Soon — SACRA Student Research Publications",
+      "authors": "SACRA Research Team, Kibogora Polytechnic",
+      "journal": "To Be Announced",
+      "date": "2026",
+      "doi": null,
+      "url": null,
+      "note": "SACRA's student research outputs are currently in progress. Official publications will be listed here upon completion and submission."
     },
     {
       "id": "pub-02",
-      "title": "Student-Led Collaborative Research Networks in Anesthesiology: Barriers and Facilitators to Global Integration",
-      "authors": "SACRA Network Researchers, E. Rostova, H. Patel",
-      "journal": "BMC Medical Education",
-      "date": "2025-11-05",
-      "doi": "10.1186/s12909-025-4892-y",
-      "url": "https://doi.org/10.1186/s12909-025-4892-y"
+      "title": "Coming Soon — Anesthesia Safety Audit: Rusizi District",
+      "authors": "Aline Uwera, SACRA Clinical Audit Team",
+      "journal": "To Be Announced",
+      "date": "2026",
+      "doi": null,
+      "url": null,
+      "note": "Findings from SACRA's ongoing compliance audit will be prepared for submission to a peer-reviewed journal upon completion of data collection."
     },
     {
       "id": "pub-03",
-      "title": "Optimal Airway Management in Remote Rural Clinics: A Simulation-Based Student Trial",
-      "authors": "M. Vance, J. Thompson, A. Al-Mansoor",
-      "journal": "Anesthesia & Analgesia Clinical Reports",
-      "date": "2025-08-19",
-      "doi": "10.1213/XAA.0000000000001944",
-      "url": "https://doi.org/10.1213/XAA.0000000000001944"
-    },
-    {
-      "id": "pub-04",
-      "title": "Perioperative Hypothermia Prevention: A Cross-Sectional Quality Improvement Audit in Academic Hospitals",
-      "authors": "A. Carter, L. Chen, O. Peterson",
-      "journal": "Journal of Clinical Anesthesia",
-      "date": "2025-04-30",
-      "doi": "10.1016/j.jclinane.2025.111420",
-      "url": "https://doi.org/10.1016/j.jclinane.2025.111420"
+      "title": "Coming Soon — Student-Led Research Network in Rwandan Anesthesia Education",
+      "authors": "SACRA Executive Committee, Kibogora Polytechnic",
+      "journal": "To Be Announced",
+      "date": "2026",
+      "doi": null,
+      "url": null,
+      "note": "A forthcoming article documenting the establishment, structure, and activities of SACRA as a model for student-led research associations in Rwandan healthcare education."
     }
   ]
 }

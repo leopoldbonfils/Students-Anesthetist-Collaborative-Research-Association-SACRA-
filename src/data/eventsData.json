@@ -4,54 +4,54 @@
       "id": "event-01",
       "title": "SACRA Annual Anesthesia Research Symposium",
       "date": "October 18, 2026",
-      "time": "13:00 - 18:00 EST",
-      "location": "Vanderbilt Auditorium & Live Webcast",
-      "speaker": "Keynote: Dr. Sarah Jenkins & Global Student Presenters",
-      "description": "Our flagship research event featuring student abstract presentations, clinical breakout panels, and an expert discussion on modern airway modeling methods. Registration includes certificate of attendance.",
+      "time": "13:00 - 18:00 CAT",
+      "location": "Kibogora Polytechnic Auditorium, Rusizi Campus",
+      "speaker": "Keynote: SACRA Executive Committee & Student Presenters",
+      "description": "Our flagship research event featuring student abstract presentations, clinical breakout panels, and a discussion on anesthesia safety improvements and evidence-based practices at Kibogora Polytechnic. Registration includes a certificate of attendance.",
       "featured": true
     },
     {
       "id": "event-02",
       "title": "Clinical Simulation Workshop: Crisis Resource Management",
       "date": "November 05, 2026",
-      "time": "09:00 - 12:30 CST",
-      "location": "Anesthesia Simulation Lab Center, Suite 400",
-      "speaker": "Prof. Marcus Vance & Clinical Sim Educators",
-      "description": "An interactive, hands-on crisis simulation lab focusing on perioperative emergencies, team-based communication, and resuscitation protocols. Seats are strictly limited to 20 students.",
+      "time": "09:00 - 12:30 CAT",
+      "location": "Kibogora Polytechnic Clinical Skills Lab, Rusizi Campus",
+      "speaker": "Eric Ndahimana (Director of Education) & Clinical Training Staff",
+      "description": "An interactive, hands-on crisis simulation workshop focusing on perioperative emergencies, team-based communication, and resuscitation protocols. Seats are strictly limited to 20 students.",
       "featured": false
     },
     {
       "id": "event-03",
       "title": "Introduction to Systematic Reviews in Anesthesia",
       "date": "December 12, 2026",
-      "time": "15:00 - 16:30 GMT",
-      "location": "Virtual Interactive Seminar",
-      "speaker": "Dr. Kenji Tanaka & Dr. Lisa Chen",
-      "description": "A comprehensive introductory webinar detailing how to formulate search strategies, register protocols, screen abstracts, and perform risk-of-bias audits for anesthesia studies.",
+      "time": "15:00 - 16:30 CAT",
+      "location": "Virtual Interactive Seminar (Online)",
+      "speaker": "Mbabazi Clemantine (Director of Research) & SACRA Research Team",
+      "description": "A comprehensive introductory webinar detailing how to formulate search strategies, register protocols, screen abstracts, and perform risk-of-bias assessments for anesthesia studies. Open to all SACRA members.",
       "featured": false
     }
   ],
   "pastEvents": [
     {
       "id": "past-01",
-      "title": "Regional Anesthesia & Ultrasound-Guided Blocks Workshop",
+      "title": "Anesthesia Safety Checklist Training — Rusizi District Clinics",
       "date": "May 14, 2026",
-      "category": "Workshops",
-      "summary": "Hands-on needle pathway visualization and nerve identification practice using state-of-the-art ultrasound machines."
+      "category": "Outreach",
+      "summary": "SACRA members conducted hands-on WHO Safe Surgery Checklist training sessions with health workers at local primary care clinics in Rusizi District, promoting standardized pre-procedure verification."
     },
     {
       "id": "past-02",
-      "title": "International Collaboration Project: Airway Safety Audit",
+      "title": "Kibogora Polytechnic Health Awareness Day",
       "date": "February 22, 2026",
-      "category": "Symposiums",
-      "summary": "Presentation of aggregated results from 14 global medical schools auditing compliance rates for pre-induction checks."
+      "category": "Campaigns",
+      "summary": "A campus-wide health awareness event organized by SACRA covering Non-Communicable Diseases (NCDs), hygiene promotion, emergency response awareness, and anesthesia-related patient safety education."
     },
     {
       "id": "past-03",
       "title": "Pediatric Sedation Protocols & Patient Outreach Campaign",
       "date": "November 10, 2025",
       "category": "Outreach",
-      "summary": "Educational drive educating local health clinics on safe sedation guidelines and monitoring checklists."
+      "summary": "Educational drive educating local health clinics on safe sedation guidelines and monitoring checklists for pediatric patients, conducted by SACRA members in collaboration with clinical staff."
     }
   ]
 }

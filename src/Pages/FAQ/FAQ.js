@@ -22,12 +22,12 @@ export const FAQ = () => {
         {
           id: 'gen-1',
           question: 'Who is eligible to join SACRA?',
-          answer: 'Medical students currently in clinical clerkships, anesthesia trainees, junior registrars, and simulation fellows are eligible for full membership. Pre-clinical students can register as associate student observers.'
+          answer: 'Any anesthesia student enrolled at Kibogora Polytechnic or another recognized Rwandan institution is eligible to apply for full membership. Students from other health-related programs who have a strong interest in anesthesia safety, research, and community health outreach may apply as associate members. Applicants must complete the registration form and agree to abide by SACRA\'s constitution and code of conduct, as adopted at the 1st General Assembly on 20 May 2025.'
         },
         {
           id: 'gen-2',
           question: 'What are the primary benefits of membership?',
-          answer: 'Members obtain free entry to our annual virtual symposium, direct access to statisticians for clinical auditing sample sizes, chapter resources for simulation drills, and eligibility to apply for research fellowships and travel grants.'
+          answer: 'Members gain access to SACRA\'s community health campaigns, campus seminars and educational workshops, peer-to-peer study groups, simulation training sessions at Kibogora Polytechnic\'s clinical skills lab, and leadership development programs. Members also have the opportunity to participate in student-led research projects, contribute to public health outreach in Rusizi District, and build a strong professional network with fellow anesthesia students.'
         }
       ]
     },
@@ -43,7 +43,7 @@ export const FAQ = () => {
         {
           id: 'res-2',
           question: 'Does SACRA provide funding for student-led research?',
-          answer: 'Yes, SACRA awards research grant funding annually. These grants cover research material logistics, dataset auditing tools, and travel/registration fees to present abstracts at international anesthesia conferences.'
+          answer: 'Currently, SACRA operates on a volunteer and institutional support basis. While formal research grant funding is not yet available, SACRA actively supports student researchers by providing guidance on methodology, facilitating access to supervisors, and helping members present their findings at campus events and local health forums. As SACRA grows, formal grant and support mechanisms will be established and announced through official SACRA channels.'
         }
       ]
     }

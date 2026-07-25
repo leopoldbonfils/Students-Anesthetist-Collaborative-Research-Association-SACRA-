@@ -98,16 +98,16 @@ export const Events = () => {
                 </div>
                 <div className="event-location-row">
                   <MapPin size={16} className="loc-icon" />
-                  <span>Royal College of Physicians, London</span>
+                  <span>Kibogora Polytechnic Auditorium, Rusizi Campus</span>
                 </div>
               </div>
 
               <h3 className="featured-event-title">
-                SACRA Annual Global Anesthesia Research Symposium 2024
+                SACRA Annual Anesthesia Research Symposium 2026
               </h3>
               
               <p className="featured-event-desc">
-                A two-day flagship conference focusing on innovative pain management strategies and pediatric anesthesia research. Featuring keynote speakers from leading university hospitals.
+                A half-day flagship event focusing on anesthesia safety research, student abstract presentations, and evidence-based practice in Rwanda. All SACRA members and Kibogora Polytechnic anesthesia students are encouraged to attend.
               </p>
 
               <div className="featured-event-actions">
@@ -204,7 +204,7 @@ export const Events = () => {
                 onChange={(e) => setRsvpName(e.target.value)}
                 required
                 disabled={rsvpStatus === 'loading'}
-                placeholder="Dr. Alex Carter"
+                placeholder="e.g. Jean-Paul Mugisha"
               />
             </div>
 
@@ -217,12 +217,12 @@ export const Events = () => {
                 onChange={(e) => setRsvpEmail(e.target.value)}
                 required
                 disabled={rsvpStatus === 'loading'}
-                placeholder="alex.carter@hospital.org"
+                placeholder="e.g. your.name@kp.ac.rw"
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="rsvp-institution">Hospital / University Chapter</label>
+              <label htmlFor="rsvp-institution">University / Institution</label>
               <input
                 id="rsvp-institution"
                 type="text"
@@ -230,7 +230,7 @@ export const Events = () => {
                 onChange={(e) => setRsvpInst(e.target.value)}
                 required
                 disabled={rsvpStatus === 'loading'}
-                placeholder="Johns Hopkins Medicine"
+                placeholder="e.g. Kibogora Polytechnic"
               />
             </div>
 

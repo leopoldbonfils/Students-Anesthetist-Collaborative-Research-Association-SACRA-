@@ -34,7 +34,7 @@ export const About = () => {
     {
       year: '2025',
       title: 'Community Initiatives Launched',
-      planned: true,
+      planned: false,
       description: 'Launched community health campaigns, organized training workshops and skill-building sessions, and established key partnerships with local health institutions and hospitals across Rwanda.'
     },
     {
@@ -99,7 +99,7 @@ export const About = () => {
       }
     },
     {
-      name: 'MBABAZI CLEMANTINE',
+      name: 'Mbabazi Clemantine',
       role: 'Director of Research',
       desc: 'Overseeing multicenter audits, database management, and academic abstract submissions.',
       initials: 'MC',
@@ -177,16 +177,16 @@ export const About = () => {
       }
     },
     {
-      name: 'Dr. Sarah Jenkins',
-      role: 'Founding Faculty Advisor',
-      desc: 'Attending Anesthesiologist advising on research methodology and clinical safety.',
-      initials: 'SJ',
+      name: 'Faculty Advisor — Needs Verification',
+      role: 'Faculty Advisor',
+      desc: 'The official SACRA Faculty Advisor at Kibogora Polytechnic is to be confirmed. This position provides academic oversight and research methodology guidance to the association.',
+      initials: 'FA',
       image: null,
       socials: {
-        x: 'https://x.com/SACRA_Anesthesia',
-        facebook: 'https://facebook.com/SACRAResearch',
-        instagram: 'https://instagram.com/sacra_research',
-        linkedin: 'https://linkedin.com/company/sacra-research'
+        x: null,
+        facebook: null,
+        instagram: null,
+        linkedin: null
       }
     }
   ];

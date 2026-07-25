@@ -10,7 +10,7 @@ export const Membership = () => {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [university, setUniversity] = useState('');
-  const [studyYear, setStudyYear] = useState('clinical');
+  const [studyYear, setStudyYear] = useState('year1');
   const [submitStatus, setSubmitStatus] = useState('idle'); // idle, loading, success
 
   const handleSubmit = async (e) => {
@@ -25,7 +25,6 @@ export const Membership = () => {
           email,
           university,
           studyYear,
-          password: 'password123', // Default placeholder password for new applications
           membershipStatus: 'pending'
         })
       });
@@ -45,7 +44,7 @@ export const Membership = () => {
     setLastName('');
     setEmail('');
     setUniversity('');
-    setStudyYear('clinical');
+    setStudyYear('year1');
     setSubmitStatus('idle');
   };
 
@@ -209,10 +208,14 @@ export const Membership = () => {
                     disabled={submitStatus === 'loading'}
                     className="form-select-box"
                   >
-                    <option value="pre-clinical">Pre-Clinical Years</option>
-                    <option value="clinical">Clinical Clerkship Years</option>
-                    <option value="resident">Anesthesia Resident / Registrar</option>
-                    <option value="fellow">Clinical Fellow</option>
+                    <option value="year1">First Year Student</option>
+                    <option value="year2">Second Year Student</option>
+                    <option value="year3">Third Year Student</option>
+                    <option value="year4">Fourth Year Student</option>
+                    <option value="alumni">Alumni</option>
+                    <option value="faculty">Faculty Advisor</option>
+                    <option value="executive">Executive Committee Member</option>
+                    <option value="sacra_member">SACRA Member (Other)</option>
                   </select>
                 </div>
 
