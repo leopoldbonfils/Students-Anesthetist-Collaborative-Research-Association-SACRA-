@@ -72,14 +72,7 @@ export const Research = () => {
             </div>
           </div>
 
-          <div className="research-hero-right">
-            {/* Styled vector representation of the Pi symbol in the screenshot */}
-            <svg width="220" height="220" viewBox="0 0 100 100" fill="none" stroke="#12263f" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" className="pi-vector-symbol">
-              <path d="M20 25 L80 25" />
-              <path d="M38 25 L38 75 C38 80, 30 80, 24 75" />
-              <path d="M62 25 L62 70 C62 75, 68 80, 76 75" />
-            </svg>
-          </div>
+
         </div>
       </section>
 
