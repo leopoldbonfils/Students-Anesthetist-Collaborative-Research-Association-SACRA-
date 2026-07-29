@@ -58,7 +58,6 @@ const MOCK_PHOTOS = [
 const ASPECT_RATIOS = ['16-9', '4-3', '1-1', '3-2'];
 
 export const Gallery = () => {
-  const [filter, setFilter] = useState('All');
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [photos, setPhotos] = useState(MOCK_PHOTOS);
 
@@ -88,16 +87,12 @@ export const Gallery = () => {
     fetchPhotos();
   }, []);
 
-  const filteredPhotos = filter === 'All' 
-    ? photos 
-    : photos.filter(p => p.category === filter);
-
   const handlePrev = () => {
-    setLightboxIndex((prev) => (prev > 0 ? prev - 1 : filteredPhotos.length - 1));
+    setLightboxIndex((prev) => (prev > 0 ? prev - 1 : photos.length - 1));
   };
 
   const handleNext = () => {
-    setLightboxIndex((prev) => (prev < filteredPhotos.length - 1 ? prev + 1 : 0));
+    setLightboxIndex((prev) => (prev < photos.length - 1 ? prev + 1 : 0));
   };
 
   useEffect(() => {
@@ -117,9 +112,9 @@ export const Gallery = () => {
       window.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'unset';
     };
-  }, [lightboxIndex, filteredPhotos]);
+  }, [lightboxIndex, photos]);
 
-  const activePhoto = lightboxIndex !== null ? filteredPhotos[lightboxIndex] : null;
+  const activePhoto = lightboxIndex !== null ? photos[lightboxIndex] : null;
 
   return (
     <div className="gallery-page animate-fade-in">
@@ -128,28 +123,10 @@ export const Gallery = () => {
         description="Explore snapshots of our clinical simulation workshops, research symposia, and surgical checklist audits."
       />
 
-      {/* Filter Category Pills */}
       <section className="container section-padding">
-        <div className="gallery-filters" role="tablist">
-          {['All', 'Workshops', 'Symposiums', 'Outreach'].map((cat) => (
-            <button
-              key={cat}
-              className={`filter-pill ${filter === cat ? 'filter-pill-active' : ''}`}
-              onClick={() => {
-                setFilter(cat);
-                setLightboxIndex(null); // Close lightbox if changing filter
-              }}
-              role="tab"
-              aria-selected={filter === cat}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
         {/* Photo Grid */}
         <div className="gallery-grid">
-          {filteredPhotos.map((photo, index) => (
+          {photos.map((photo, index) => (
             <div
               key={photo.id}
               className="gallery-item animate-scale-in"
@@ -186,7 +163,7 @@ export const Gallery = () => {
           </button>
 
           {/* Navigation Arrows */}
-          {filteredPhotos.length > 1 && (
+          {photos.length > 1 && (
             <>
               <button 
                 className="lightbox-nav-btn prev" 
