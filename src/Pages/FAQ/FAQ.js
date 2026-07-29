@@ -112,8 +112,10 @@ export const FAQ = () => {
         {/* Contact support sidebar */}
         <div className="faq-sidebar-cta">
           <Card className="sidebar-cta-card" hoverEffect={false}>
-            <h3>Still Have Questions?</h3>
-            <p>If you can't find the answers you're looking for, contact our support desk directly at Kibogora Polytechnic – Rusizi Campus, or reach us at <a href="mailto:sacra.59@yahoo.com">sacra.59@yahoo.com</a> / <a href="tel:+250789402382">+250 789 402 382</a>.</p>
+            <div className="faq-contact-box">
+              <h4>Still Have Questions?</h4>
+              <p>If you can't find the answers you're looking for, contact our support desk directly at Kibogora Polytechnic – Rusizi Campus, or reach us at <a href="mailto:sacra.59@yahoo.com">sacra.59@yahoo.com</a> / <a href="tel:+250789402382">+250 789 402 382</a>.</p>
+            </div>
             <Button to="/contact" variant="primary">Contact Our Support</Button>
           </Card>
         </div>

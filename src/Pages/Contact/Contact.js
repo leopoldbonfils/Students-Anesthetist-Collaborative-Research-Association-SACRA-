@@ -9,6 +9,7 @@ import './Contact.css';
 export const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [formStatus, setFormStatus] = useState('idle'); // idle, loading, success
@@ -89,7 +90,7 @@ export const Contact = () => {
       const response = await fetch('http://localhost:5000/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, subject, message })
+        body: JSON.stringify({ name, email, phone, subject, message })
       });
       if (response.ok) {
         setFormStatus('success');
@@ -105,6 +106,7 @@ export const Contact = () => {
   const handleReset = () => {
     setName('');
     setEmail('');
+    setPhone('');
     setSubject('');
     setMessage('');
     setFormStatus('idle');
@@ -217,24 +219,38 @@ export const Contact = () => {
                   </div>
                 </div>
 
-                <div className="form-input-group">
-                  <label htmlFor="contact-subject">Inquiry Subject</label>
-                  <select
-                    id="contact-subject"
-                    value={subject}
-                    onChange={(e) => setSubject(e.target.value)}
-                    required
-                    disabled={formStatus === 'loading'}
-                    className="select-field"
-                  >
-                    <option value="">Select a topic</option>
-                    <option value="membership">Membership Application</option>
-                    <option value="campaigns">Community Health Campaigns</option>
-                    <option value="workshop">Workshops &amp; Skill-Building</option>
-                    <option value="research">Research Collaboration</option>
-                    <option value="partnership">Institutional Partnership</option>
-                    <option value="general">General Inquiry</option>
-                  </select>
+                <div className="form-row-grid">
+                  <div className="form-input-group">
+                    <label htmlFor="contact-phone">Phone Number</label>
+                    <input
+                      id="contact-phone"
+                      type="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="e.g. 0788 000 000"
+                      disabled={formStatus === 'loading'}
+                    />
+                  </div>
+
+                  <div className="form-input-group">
+                    <label htmlFor="contact-subject">Inquiry Subject</label>
+                    <select
+                      id="contact-subject"
+                      value={subject}
+                      onChange={(e) => setSubject(e.target.value)}
+                      required
+                      disabled={formStatus === 'loading'}
+                      className="select-field"
+                    >
+                      <option value="">Select a topic</option>
+                      <option value="membership">Membership Application</option>
+                      <option value="campaigns">Community Health Campaigns</option>
+                      <option value="workshop">Workshops &amp; Skill-Building</option>
+                      <option value="research">Research Collaboration</option>
+                      <option value="partnership">Institutional Partnership</option>
+                      <option value="general">General Inquiry</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div className="form-input-group">
