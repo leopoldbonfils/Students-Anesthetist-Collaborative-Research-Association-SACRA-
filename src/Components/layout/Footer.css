@@ -1,15 +1,27 @@
 .site-footer {
-  background-color: #0d172a; /* Deep Slate Blue */
+  position: relative;
+  background-color: #002b80;
   color: #94a3b8;
   padding-top: var(--space-3xl);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 15px;
+}
+
+/* 3-row stacked zigzag: blue (top) → white (mid) → navy (bottom) */
+.footer-zigzag {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  display: block;
+  overflow: visible;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 2.5fr;
   gap: var(--space-2xl);
-  padding-bottom: var(--space-2xl);
+  padding-bottom: var(--space-md);
 }
 
 .footer-brand-col {
@@ -114,12 +126,24 @@
   color: var(--color-accent);
 }
 
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.footer-contact-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-accent);
+}
+
 /* Footer Bottom */
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: var(--space-lg) 0;
-  margin-top: var(--space-xl);
-  background-color: #090f1d;
+  margin-top: var(--space-sm);
+  background-color: #001f5c;
 }
 
 .footer-bottom-container {
@@ -157,6 +181,7 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--space-xl);
   }
+
   .footer-newsletter-col {
     grid-column: span 2;
   }
@@ -167,9 +192,11 @@
     grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
+
   .footer-newsletter-col {
     grid-column: span 1;
   }
+
   .footer-bottom-container {
     flex-direction: column;
     text-align: center;
