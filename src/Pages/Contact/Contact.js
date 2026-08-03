@@ -147,7 +147,7 @@ export const Contact = () => {
               </div>
               <div className="info-item-text">
                 <h4>Direct Email</h4>
-                <p><a href="mailto:sacra.59@yahoo.com" style={{color:'inherit', textDecoration:'none'}}>sacra.59@yahoo.com</a></p>
+                <p><a href="mailto:infosacra05@gmail.com" style={{color:'inherit', textDecoration:'none'}}>infosacra05@gmail.com</a></p>
               </div>
             </div>
 
