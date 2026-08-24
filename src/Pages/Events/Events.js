@@ -6,9 +6,25 @@ import { Button } from '../../components/ui/Button';
 import { Modal } from '../../components/ui/Modal';
 import { Loader } from '../../components/ui/Loader';
 import { dataService } from '../../services/dataService';
-import { Clock, MapPin, CheckCircle2 } from 'lucide-react';
+import { Clock, MapPin, CheckCircle2, PlayCircle, X } from 'lucide-react';
 import simLabImg from '../../assets/images/sim-lab.png';
 import './Events.css';
+
+// Convert any YouTube URL format to embed URL
+const getYouTubeEmbedUrl = (url) => {
+  if (!url) return null;
+  try {
+    // youtu.be/VIDEO_ID
+    const shortMatch = url.match(/youtu\.be\/([^?&]+)/);
+    if (shortMatch) return `https://www.youtube.com/embed/${shortMatch[1]}?autoplay=1&rel=0`;
+    // youtube.com/watch?v=VIDEO_ID
+    const watchMatch = url.match(/[?&]v=([^&]+)/);
+    if (watchMatch) return `https://www.youtube.com/embed/${watchMatch[1]}?autoplay=1&rel=0`;
+    // Already an embed URL
+    if (url.includes('/embed/')) return url.includes('autoplay') ? url : url + '?autoplay=1&rel=0';
+  } catch (_) {}
+  return null;
+};
 
 export const Events = () => {
   const [eventsData, setEventsData] = useState(null);
@@ -18,6 +34,7 @@ export const Events = () => {
   const [rsvpEmail, setRsvpEmail] = useState('');
   const [rsvpInst, setRsvpInst] = useState('');
   const [rsvpStatus, setRsvpStatus] = useState('idle'); // idle, loading, success
+  const [videoEvent, setVideoEvent] = useState(null); // Holds event whose video is playing
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -61,8 +78,9 @@ export const Events = () => {
     );
   }
 
-  const featuredEvent = eventsData?.upcomingEvents.find(ev => ev.featured);
-  const standardEvents = eventsData?.upcomingEvents.filter(ev => !ev.featured) || [];
+  const upcomingEvents = eventsData?.upcomingEvents || [];
+  const featuredEvent = upcomingEvents.find(ev => ev.featured);
+  const standardEvents = upcomingEvents.filter(ev => !ev.featured);
   const pastEvents = eventsData?.pastEvents || [];
 
   return (
@@ -114,6 +132,12 @@ export const Events = () => {
                 <Button onClick={() => handleOpenRsvp(featuredEvent)} variant="primary">
                   Register Now
                 </Button>
+                {featuredEvent.videoUrl && (
+                  <Button onClick={() => setVideoEvent(featuredEvent)} variant="outline" className="watch-btn">
+                    <PlayCircle size={16} style={{ marginRight: 6, verticalAlign: 'middle' }} />
+                    Watch Recording
+                  </Button>
+                )}
                 <Button to="/about" variant="outline">
                   Learn More
                 </Button>
@@ -149,6 +173,12 @@ export const Events = () => {
                   <Button onClick={() => handleOpenRsvp(event)} variant="outline">
                     Register
                   </Button>
+                  {event.videoUrl && (
+                    <Button onClick={() => setVideoEvent(event)} variant="ghost" className="watch-btn">
+                      <PlayCircle size={15} style={{ marginRight: 5, verticalAlign: 'middle' }} />
+                      Watch
+                    </Button>
+                  )}
                 </div>
               </Card>
             ))}
@@ -171,6 +201,12 @@ export const Events = () => {
               </div>
               <h4 className="past-event-title">{past.title}</h4>
               <p className="past-event-desc">{past.summary}</p>
+              {past.videoUrl && (
+                <button className="past-event-watch-btn" onClick={() => setVideoEvent(past)}>
+                  <PlayCircle size={15} />
+                  Watch Recording
+                </button>
+              )}
             </Card>
           ))}
         </div>
@@ -245,6 +281,28 @@ export const Events = () => {
           </form>
         )}
       </Modal>
+      {/* YouTube Video Modal */}
+      {videoEvent && (
+        <div className="yt-modal-backdrop" onClick={() => setVideoEvent(null)}>
+          <div className="yt-modal-container" onClick={(e) => e.stopPropagation()}>
+            <div className="yt-modal-header">
+              <h3 className="yt-modal-title">{videoEvent.title}</h3>
+              <button className="yt-modal-close" onClick={() => setVideoEvent(null)}>
+                <X size={20} />
+              </button>
+            </div>
+            <div className="yt-video-wrapper">
+              <iframe
+                src={getYouTubeEmbedUrl(videoEvent.videoUrl)}
+                title={videoEvent.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="yt-iframe"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

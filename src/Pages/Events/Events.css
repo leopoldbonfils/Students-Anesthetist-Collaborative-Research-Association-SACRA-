@@ -421,3 +421,123 @@
     width: 100%;
   }
 }
+
+/* ─── YouTube Video Modal ──────────────────────────────── */
+.yt-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: ytFadeIn 0.2s ease;
+}
+
+@keyframes ytFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.yt-modal-container {
+  background: #0f172a;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+  animation: ytSlideUp 0.25s ease;
+  overflow: hidden;
+}
+
+@keyframes ytSlideUp {
+  from { transform: translateY(24px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.yt-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.yt-modal-title {
+  color: #f1f5f9;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 48px);
+}
+
+.yt-modal-close {
+  background: rgba(255,255,255,0.08);
+  border: none;
+  color: #94a3b8;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s;
+}
+
+.yt-modal-close:hover {
+  background: rgba(255,255,255,0.15);
+  color: #f1f5f9;
+}
+
+/* 16:9 responsive iframe wrapper */
+.yt-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #000;
+}
+
+.yt-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ─── Past Event Watch Button ─────────────────────────── */
+.past-event-watch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1.5px solid var(--color-primary, #2563eb);
+  color: var(--color-primary, #2563eb);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  font-family: inherit;
+}
+
+.past-event-watch-btn:hover {
+  background: var(--color-primary, #2563eb);
+  color: #fff;
+}
+
+/* Allow multiple buttons side-by-side in event-action-wrapper */
+.event-action-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+

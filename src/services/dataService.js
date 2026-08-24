@@ -27,7 +27,49 @@ export const dataService = {
   },
 
   async getEvents() {
-    return fetchWithFallback('/events', eventsData);
+    try {
+      const response = await fetch(`${API_BASE_URL}/events`);
+      if (!response.ok) throw new Error(`API returned status ${response.status}`);
+      const rawEvents = await response.json();
+
+      // API returns a flat array — split into upcoming vs past by status
+      if (Array.isArray(rawEvents)) {
+        const now = new Date();
+        const upcomingEvents = rawEvents
+          .filter(ev => ev.status !== 'Past' && ev.status !== 'Cancelled' && new Date(ev.date) >= now)
+          .map((ev, i) => ({
+            id: ev.id,
+            title: ev.title,
+            description: ev.description || '',
+            date: new Date(ev.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+            time: '',
+            location: ev.location || '',
+            category: ev.category || '',
+            featured: i === 0, // first upcoming event is featured
+            status: ev.status,
+            videoUrl: ev.videoUrl || null
+          }));
+
+        const pastEvents = rawEvents
+          .filter(ev => ev.status === 'Past' || new Date(ev.date) < now)
+          .map(ev => ({
+            id: ev.id,
+            title: ev.title,
+            date: new Date(ev.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+            category: ev.category || 'Event',
+            summary: ev.description || '',
+            videoUrl: ev.videoUrl || null
+          }));
+
+        return { upcomingEvents, pastEvents };
+      }
+
+      // If API returns already-shaped object, use as-is
+      return rawEvents;
+    } catch (error) {
+      console.warn(`API request to /events failed (${error.message}). Falling back to local mock data.`);
+      return eventsData;
+    }
   },
 
   async getBlogPosts() {
