@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, ArrowRight, FlaskConical, GraduationCap, Users, Heart, Building2, HeartPulse } from 'lucide-react';
+import { ArrowRight, FlaskConical, GraduationCap, Users, Heart, Building2, HeartPulse } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { Card } from '../../components/ui/Card';
 import simLabImg from '../../assets/images/sim-lab.png';

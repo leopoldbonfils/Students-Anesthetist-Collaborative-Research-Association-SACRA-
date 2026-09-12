@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { PageHeader } from '../../components/common/PageHeader';
 import { ZoomIn, Calendar, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { createPortal } from 'react-dom';
@@ -55,8 +55,6 @@ const MOCK_PHOTOS = [
   }
 ];
 
-const ASPECT_RATIOS = ['16-9', '4-3', '1-1', '3-2'];
-
 export const Gallery = () => {
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [photos, setPhotos] = useState(MOCK_PHOTOS);
@@ -87,13 +85,13 @@ export const Gallery = () => {
     fetchPhotos();
   }, []);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     setLightboxIndex((prev) => (prev > 0 ? prev - 1 : photos.length - 1));
-  };
+  }, [photos.length]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setLightboxIndex((prev) => (prev < photos.length - 1 ? prev + 1 : 0));
-  };
+  }, [photos.length]);
 
   useEffect(() => {
     if (lightboxIndex === null) return;
@@ -112,7 +110,7 @@ export const Gallery = () => {
       window.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'unset';
     };
-  }, [lightboxIndex, photos]);
+  }, [lightboxIndex, handleNext, handlePrev]);
 
   const activePhoto = lightboxIndex !== null ? photos[lightboxIndex] : null;
 
